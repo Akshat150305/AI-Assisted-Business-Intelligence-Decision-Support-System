@@ -226,7 +226,7 @@ All KPIs use cleaned data. Any ratio returns "no value" when its denominator is 
 | Repeat-customer rate | Customers with 2 or more distinct orders in the period ÷ Active customers |
 | Revenue contribution % | Revenue of an item (product, category, region, customer) ÷ total Revenue of the same filtered selection |
 | Top-N customer share | Revenue of the top N customers ÷ total Revenue |
-| Period-over-period change | Current period value − previous period value; % change = (current − previous) ÷ previous × 100 |
+| Period-over-period change | Current period value − previous period value; % change = (current − previous) ÷ ABS(previous) × 100. ABS keeps the sign meaningful when the previous value is negative (for example profit moving from −100 to −50 is +50%). |
 | Anomaly deviation | (Observed − rolling baseline) ÷ rolling spread, using only earlier periods. The exact method and threshold are defined and documented in Phase 4. |
 
 **Period-over-period rule:** the previous period is the immediately preceding period of the same length and grain (for example, this month vs last month). If no previous period exists, no change is shown.

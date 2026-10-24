@@ -1,0 +1,41 @@
+product_id,product_name,category
+P001,Wireless Earbuds,Electronics
+P002,Bluetooth Speaker,Electronics
+P003,Smart Watch,Electronics
+P004,Power Bank,Electronics
+P005,USB-C Charger,Electronics
+P006,HD Webcam,Electronics
+P007,Mechanical Keyboard,Electronics
+P008,Gaming Mouse,Electronics
+P009,Air Fryer,Home & Kitchen
+P010,Non-stick Pan Set,Home & Kitchen
+P011,Electric Kettle,Home & Kitchen
+P012,Blender,Home & Kitchen
+P013,Knife Set,Home & Kitchen
+P014,Storage Containers,Home & Kitchen
+P015,Coffee Maker,Home & Kitchen
+P016,Bed Sheet Set,Home & Kitchen
+P017,Cotton T-Shirt,Clothing
+P018,Denim Jeans,Clothing
+P019,Winter Jacket,Clothing
+P020,Running Shorts,Clothing
+P021,Hoodie,Clothing
+P022,Formal Shirt,Clothing
+P023,Wool Socks,Clothing
+P024,Sneakers,Clothing
+P025,Yoga Mat,Sports & Outdoors
+P026,Dumbbell Set,Sports & Outdoors
+P027,Camping Tent,Sports & Outdoors
+P028,Water Bottle,Sports & Outdoors
+P029,Football,Sports & Outdoors
+P030,Cycling Helmet,Sports & Outdoors
+P031,Resistance Bands,Sports & Outdoors
+P032,Hiking Backpack,Sports & Outdoors
+P033,Face Moisturizer,Beauty & Personal Care
+P034,Shampoo,Beauty & Personal Care
+P035,Perfume,Beauty & Personal Care
+P036,Electric Toothbrush,Beauty & Personal Care
+P037,Hair Dryer,Beauty & Personal Care
+P038,Sunscreen,Beauty & Personal Care
+P039,Lipstick Set,Beauty & Personal Care
+P040,Beard Trimmer,Beauty & Personal Care

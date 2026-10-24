@@ -1,0 +1,2 @@
+revenue,cost,profit,profit_margin_pct,distinct_orders,order_lines,units_sold,avg_order_value,active_customers,revenue_per_customer,repeat_customer_rate
+6826108.29,4322584.91,2503523.38,36.6757,22829,50391,140358,299.0104,1185,5760.4289,0.973

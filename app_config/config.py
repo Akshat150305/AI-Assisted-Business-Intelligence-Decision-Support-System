@@ -24,6 +24,9 @@ REJECTED_ROWS_FILE = DATA_PROCESSED / "rejected_rows.csv"
 AUDIT_LOG_FILE = DATA_PROCESSED / "cleaning_audit_log.csv"
 QUALITY_SUMMARY_FILE = REPORTS_DIR / "data_quality_summary.md"
 
+SQL_DIR = PROJECT_ROOT / "sql"
+DB_FILE = DATA_PROCESSED / "retail_bi.db"       # SQLite database (git-ignored, rebuilt by the pipeline)
+
 # ---------------------------------------------------------------- generation
 SEED = 42
 START_DATE = "2024-01-01"      # first order date (inclusive)

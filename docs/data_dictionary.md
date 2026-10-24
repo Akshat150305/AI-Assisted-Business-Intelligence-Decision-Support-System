@@ -116,3 +116,50 @@ These are rules in the generator, listed so nobody mistakes them for real-world 
 - Categories differ in margin (for example Electronics is lower margin than Beauty & Personal Care) and in seasonal demand.
 - A minority of customers place many more orders than the rest, so revenue is concentrated.
 - Four business anomalies are planted (see 5).
+
+---
+
+## 7. SQLite database (`data/processed/retail_bi.db`, Phase 3)
+
+Rebuilt from `sales_clean.csv` by `python -m src.database` (git-ignored). Schema: `sql/01_schema.sql`.
+
+| Table | Grain | Purpose |
+|---|---|---|
+| `sales_lines` | one order line, key `(order_id, line_number)` | The fact table. All SQL queries read it. It is "wide" (region, category ... on every row) to keep queries simple. |
+| `dim_product` | one product | `product_id`, `product_name`, `category`. Guarantees one category per product. |
+| `dim_customer` | one customer | `customer_id`, `customer_segment`, `region`. Guarantees one segment and one region per customer. |
+
+The database enforces: primary key (no duplicate order line), foreign keys to both dimensions, `quantity > 0`, `unit_price > 0`, `cost >= 0` and an ISO `YYYY-MM-DD` date format.
+
+### SQL files (`sql/`)
+
+Every query accepts the same optional filters (`NULL` = no restriction): `:start_date`, `:end_date` (inclusive), `:region`, `:category`, `:segment`. `period_comparison.sql` takes the two periods instead of start/end dates.
+
+| File | Returns |
+|---|---|
+| `kpi_summary.sql` | One row of headline KPIs |
+| `monthly_trend.sql` | KPIs by month with month-over-month change |
+| `by_region.sql`, `by_category.sql`, `by_segment.sql`, `by_product.sql` | KPIs and revenue/profit share by that dimension |
+| `region_monthly.sql` | KPIs by region and month |
+| `customer_metrics.sql` | One row per customer, with repeat-customer flag |
+| `period_comparison.sql` | Current vs previous period aggregates |
+
+## 8. Power BI export tables (`data/exports/`, Phase 3)
+
+Written by `python -m src.powerbi_export` (and by `run_pipeline.py`). Star schema: `fact_sales` joined to three dimensions. `fact_sales.csv` is git-ignored (about 3 MB, regenerable); the other tables are small and committed.
+
+| File | Grain | Columns |
+|---|---|---|
+| `fact_sales.csv` | order line | `order_id, line_number, order_date, customer_id, product_id, quantity, unit_price, revenue, cost, profit` |
+| `dim_date.csv` | calendar day (complete, no gaps) | `date, year, quarter, month_number, month_name, year_month, month_start, week_start (Monday), day_of_week_number, day_name, is_weekend` |
+| `dim_product.csv` | product | `product_id, product_name, category` |
+| `dim_customer.csv` | customer | `customer_id, customer_segment, region` |
+| `kpi_summary.csv` | 1 row | All headline KPIs from SQL. **Answer key for checking the DAX measures.** |
+| `kpi_monthly.csv` | month | Monthly KPIs from SQL. Answer key by month. |
+| `customer_metrics.csv` | customer | Purchasing metrics from SQL (customer analysis page). |
+
+Relationships to create in Power BI: `fact_sales[order_date]` to `dim_date[date]`, `fact_sales[product_id]` to `dim_product[product_id]`, `fact_sales[customer_id]` to `dim_customer[customer_id]` (all many-to-one, single direction from dimension to fact). Region and segment are customer attributes, category is a product attribute.
+
+### Caution when adding up numbers
+
+**Distinct counts are not additive.** An order has one region and one segment, so order counts by region add up to the total. An order can contain several categories, so order counts by category add up to MORE than the total. The tests check both facts. Revenue and profit are additive across every dimension.
