@@ -1,0 +1,183 @@
+log_id,source_row,order_id,line_number,rule_id,rule_name,action,column,old_value,new_value,reason
+L000001,170,ORD-000085,1,R13,missing_value_repaired,REPAIRED,unit_price,,28.02,unit_price is blank; rebuilt as revenue / quantity
+L000002,329,ORD-000163,1,R12,invalid_category_region_segment,REPAIRED,category,Hme & Kitchen,Sports & Outdoors,category is not an allowed value; taken from the other rows of this product_id
+L000003,698,ORD-000341,1,R11,text_standardised,REPAIRED,category,electronics,Electronics,category: spaces or letter case standardised
+L000004,809,ORD-000391,2,R11,text_standardised,REPAIRED,category,BEAUTY & PERSONAL CARE,Beauty & Personal Care,category: spaces or letter case standardised
+L000005,904,ORD-000438,2,R12,invalid_category_region_segment,REPAIRED,category,Hme & Kitchen,Electronics,category is not an allowed value; taken from the other rows of this product_id
+L000006,1158,ORD-000548,5,R13,missing_value_repaired,REPAIRED,customer_segment,,Corporate,customer_segment is blank; taken from the other rows of this customer_id
+L000007,1943,ORD-000904,2,R07,revenue_mismatch,REPAIRED,revenue,126.89,101.65,revenue recalculated as quantity x unit_price
+L000008,2279,ORD-001056,2,R04,invalid_or_out_of_range_date,REMOVED,order_date,2032-06-26,,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+L000009,2388,ORD-001101,2,R08,price_outlier,REMOVED,unit_price,6084.00,,unit_price is outside 0.5x to 2.0x of the product's median price
+L000010,2650,ORD-001211,2,R07,revenue_mismatch,REPAIRED,revenue,874.65,724.16,revenue recalculated as quantity x unit_price
+L000011,2664,ORD-001216,1,R06,invalid_unit_price,REMOVED,unit_price,0.00,,"unit_price is zero, negative or not a number"
+L000012,2893,ORD-001329,1,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000013,3070,ORD-001412,1,R13,missing_value_repaired,REPAIRED,region,,East,region is blank; taken from the other rows of this customer_id
+L000014,3308,ORD-001518,5,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000015,3509,ORD-001622,1,R07,revenue_mismatch,REPAIRED,revenue,99.41,89.22,revenue recalculated as quantity x unit_price
+L000016,3676,ORD-001696,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000017,3787,ORD-001745,1,R13,missing_value_repaired,REPAIRED,category,,Clothing,category is blank; taken from the other rows of this product_id
+L000018,3799,ORD-001750,3,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000019,4050,ORD-001861,3,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000020,4768,ORD-002186,1,R11,text_standardised,REPAIRED,region,WEST,West,region: spaces or letter case standardised
+L000021,6010,ORD-002741,3,R12,invalid_category_region_segment,REPAIRED,customer_segment,SMB,Small Business,customer_segment is not an allowed value; taken from the other rows of this customer_id
+L000022,6559,ORD-002997,2,R12,invalid_category_region_segment,REPAIRED,region,Nrth,East,region is not an allowed value; taken from the other rows of this customer_id
+L000023,6795,,1,R03,missing_required_value,REMOVED,order_id,,,required field 'order_id' is blank and cannot be repaired
+L000024,7283,ORD-003337,1,R10,profit_mismatch,REPAIRED,profit,-11.68,11.89,profit recalculated as revenue - cost
+L000025,7547,ORD-003447,3,R13,missing_value_repaired,REPAIRED,customer_segment,,Consumer,customer_segment is blank; taken from the other rows of this customer_id
+L000026,8169,ORD-003747,2,R07,revenue_mismatch,REPAIRED,revenue,749.74,626.64,revenue recalculated as quantity x unit_price
+L000027,8175,ORD-003749,1,R12,invalid_category_region_segment,REPAIRED,category,Unknown,Home & Kitchen,category is not an allowed value; taken from the other rows of this product_id
+L000028,8280,,1,R03,missing_required_value,REMOVED,order_id,,,required field 'order_id' is blank and cannot be repaired
+L000029,9474,ORD-004350,2,R12,invalid_category_region_segment,REPAIRED,region,Central,North,region is not an allowed value; taken from the other rows of this customer_id
+L000030,9841,ORD-004510,2,R13,missing_value_repaired,REPAIRED,region,,West,region is blank; taken from the other rows of this customer_id
+L000031,10280,ORD-004710,1,R10,profit_mismatch,REPAIRED,profit,123.48,135.08,profit recalculated as revenue - cost
+L000032,10438,ORD-004782,1,R13,missing_value_repaired,REPAIRED,region,,North,region is blank; taken from the other rows of this customer_id
+L000033,10508,ORD-004814,1,R13,missing_value_repaired,REPAIRED,unit_price,,58.29,unit_price is blank; rebuilt as revenue / quantity
+L000034,10772,ORD-004933,2,R11,text_standardised,REPAIRED,region,NORTH,North,region: spaces or letter case standardised
+L000035,11398,ORD-005219,1,R13,missing_value_repaired,REPAIRED,customer_segment,,Small Business,customer_segment is blank; taken from the other rows of this customer_id
+L000036,11863,ORD-005422,3,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000037,11898,ORD-005436,1,R05,invalid_quantity,REMOVED,quantity,-2,,quantity is not a positive whole number
+L000038,11925,ORD-005445,1,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000039,11950,ORD-005454,1,R04,invalid_or_out_of_range_date,REMOVED,order_date,2031-09-17,,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+L000040,13267,ORD-006050,1,R13,missing_value_repaired,REPAIRED,customer_segment,,Consumer,customer_segment is blank; taken from the other rows of this customer_id
+L000041,13442,ORD-006128,1,R13,missing_value_repaired,REPAIRED,category,,Home & Kitchen,category is blank; taken from the other rows of this product_id
+L000042,13940,ORD-006364,3,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000043,13945,ORD-006366,1,R12,invalid_category_region_segment,REPAIRED,region,Nrth,North,region is not an allowed value; taken from the other rows of this customer_id
+L000044,14470,ORD-006595,2,R11,text_standardised,REPAIRED,region,West  ,West,region: spaces or letter case standardised
+L000045,14714,ORD-006716,2,R12,invalid_category_region_segment,REPAIRED,region,Unknown,North,region is not an allowed value; taken from the other rows of this customer_id
+L000046,14918,ORD-006803,1,R11,text_standardised,REPAIRED,region,WEST,West,region: spaces or letter case standardised
+L000047,15031,ORD-006855,1,R12,invalid_category_region_segment,REPAIRED,category,Unknown,Home & Kitchen,category is not an allowed value; taken from the other rows of this product_id
+L000048,15533,ORD-007077,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000049,16352,ORD-007440,4,R13,missing_value_repaired,REPAIRED,region,,South,region is blank; taken from the other rows of this customer_id
+L000050,16703,ORD-007595,2,R13,missing_value_repaired,REPAIRED,customer_segment,,Small Business,customer_segment is blank; taken from the other rows of this customer_id
+L000051,17100,ORD-007774,2,R11,text_standardised,REPAIRED,region,East  ,East,region: spaces or letter case standardised
+L000052,17309,ORD-007873,2,R13,missing_value_repaired,REPAIRED,category,,Electronics,category is blank; taken from the other rows of this product_id
+L000053,17734,ORD-008055,3,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000054,18009,ORD-008174,1,R12,invalid_category_region_segment,REPAIRED,region,N/A,South,region is not an allowed value; taken from the other rows of this customer_id
+L000055,18782,ORD-008511,1,R10,profit_mismatch,REPAIRED,profit,157.33,115.91,profit recalculated as revenue - cost
+L000056,18838,ORD-008534,1,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000057,19036,ORD-008628,2,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000058,19050,ORD-008636,3,R12,invalid_category_region_segment,REPAIRED,category,Misc,Clothing,category is not an allowed value; taken from the other rows of this product_id
+L000059,19483,ORD-010102,7,R09,order_header_conflict,REMOVED,order_id,ORD-010102,,"customer, date or region disagrees with the rest of the order"
+L000060,19820,ORD-008986,2,R04,invalid_or_out_of_range_date,REMOVED,order_date,31/02/2025,,order_date is not a valid YYYY-MM-DD date
+L000061,19965,ORD-009054,3,R04,invalid_or_out_of_range_date,REMOVED,order_date,2025-02-30,,order_date is not a valid YYYY-MM-DD date
+L000062,20082,ORD-009106,1,R06,invalid_unit_price,REMOVED,unit_price,0.00,,"unit_price is zero, negative or not a number"
+L000063,20640,ORD-009374,4,R05,invalid_quantity,REMOVED,quantity,0,,quantity is not a positive whole number
+L000064,20745,ORD-009428,2,R11,text_standardised,REPAIRED,category,electronics,Electronics,category: spaces or letter case standardised
+L000065,21501,ORD-009776,1,R12,invalid_category_region_segment,REPAIRED,region,Central,South,region is not an allowed value; taken from the other rows of this customer_id
+L000066,21580,ORD-009809,1,R11,text_standardised,REPAIRED,category, Clothing,Clothing,category: spaces or letter case standardised
+L000067,21796,ORD-009909,1,R11,text_standardised,REPAIRED,region, North,North,region: spaces or letter case standardised
+L000068,21831,ORD-009922,2,R14,invalid_cost,REMOVED,cost,-19.32,,cost is negative or not a number
+L000069,22026,ORD-010012,2,R12,invalid_category_region_segment,REPAIRED,customer_segment,Unknown,Consumer,customer_segment is not an allowed value; taken from the other rows of this customer_id
+L000070,22098,ORD-010045,1,R05,invalid_quantity,REMOVED,quantity,-1,,quantity is not a positive whole number
+L000071,22122,ORD-010055,2,R03,missing_required_value,REMOVED,cost,,,required field 'cost' is blank and cannot be repaired
+L000072,22282,ORD-010121,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000073,22318,ORD-010135,2,R10,profit_mismatch,REPAIRED,profit,113.23,73.42,profit recalculated as revenue - cost
+L000074,22549,ORD-010248,2,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000075,23118,ORD-010496,3,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000076,23763,ORD-010794,1,R04,invalid_or_out_of_range_date,REMOVED,order_date,2025-02-30,,order_date is not a valid YYYY-MM-DD date
+L000077,24063,ORD-010931,1,R11,text_standardised,REPAIRED,region,EAST,East,region: spaces or letter case standardised
+L000078,24318,ORD-011039,1,R03,missing_required_value,REMOVED,quantity,,,required field 'quantity' is blank and cannot be repaired
+L000079,24721,ORD-011232,2,R13,missing_value_repaired,REPAIRED,category,,Electronics,category is blank; taken from the other rows of this product_id
+L000080,24764,ORD-011254,1,R14,invalid_cost,REMOVED,cost,-67.79,,cost is negative or not a number
+L000081,24841,ORD-011293,1,R07,revenue_mismatch,REPAIRED,revenue,182.04,142.41,revenue recalculated as quantity x unit_price
+L000082,25242,ORD-011459,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000083,25538,ORD-011594,1,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000084,25717,ORD-011672,2,R11,text_standardised,REPAIRED,category,Clothing  ,Clothing,category: spaces or letter case standardised
+L000085,25720,ORD-011673,2,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000086,26346,ORD-011952,3,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000087,26389,ORD-011973,1,R04,invalid_or_out_of_range_date,REMOVED,order_date,2030-04-28,,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+L000088,26541,ORD-012038,4,R11,text_standardised,REPAIRED,category, Clothing,Clothing,category: spaces or letter case standardised
+L000089,26784,ORD-012149,2,R03,missing_required_value,REMOVED,quantity,,,required field 'quantity' is blank and cannot be repaired
+L000090,26846,ORD-012175,3,R08,price_outlier,REMOVED,unit_price,7036.00,,unit_price is outside 0.5x to 2.0x of the product's median price
+L000091,26914,ORD-012206,4,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000092,26996,ORD-012243,1,R03,missing_required_value,REMOVED,quantity,,,required field 'quantity' is blank and cannot be repaired
+L000093,27133,ORD-012307,1,R07,revenue_mismatch,REPAIRED,revenue,141.32,117.66,revenue recalculated as quantity x unit_price
+L000094,27507,ORD-012469,1,R04,invalid_or_out_of_range_date,REMOVED,order_date,2025-13-40,,order_date is not a valid YYYY-MM-DD date
+L000095,27851,ORD-012620,2,R12,invalid_category_region_segment,REPAIRED,customer_segment,Enterprise,Small Business,customer_segment is not an allowed value; taken from the other rows of this customer_id
+L000096,28536,ORD-012936,2,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000097,28958,ORD-013121,2,R13,missing_value_repaired,REPAIRED,category,,Clothing,category is blank; taken from the other rows of this product_id
+L000098,29128,ORD-013193,1,R14,invalid_cost,REMOVED,cost,-114.02,,cost is negative or not a number
+L000099,29255,ORD-013250,2,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000100,29627,ORD-013402,1,R07,revenue_mismatch,REPAIRED,revenue,92.00,118.64,revenue recalculated as quantity x unit_price
+L000101,29651,ORD-013410,2,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000102,29907,ORD-013529,1,R12,invalid_category_region_segment,REPAIRED,category,Misc,Electronics,category is not an allowed value; taken from the other rows of this product_id
+L000103,30194,ORD-013666,1,R13,missing_value_repaired,REPAIRED,category,,Home & Kitchen,category is blank; taken from the other rows of this product_id
+L000104,30604,ORD-013842,1,R07,revenue_mismatch,REPAIRED,revenue,77.46,61.57,revenue recalculated as quantity x unit_price
+L000105,30733,ORD-013899,1,R05,invalid_quantity,REMOVED,quantity,0,,quantity is not a positive whole number
+L000106,31639,ORD-014305,1,R04,invalid_or_out_of_range_date,REMOVED,order_date,2031-09-05,,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+L000107,31813,ORD-014386,1,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000108,31993,ORD-014466,2,R10,profit_mismatch,REPAIRED,profit,51.37,38.02,profit recalculated as revenue - cost
+L000109,32735,ORD-014792,3,R13,missing_value_repaired,REPAIRED,unit_price,,41.71,unit_price is blank; rebuilt as revenue / quantity
+L000110,33092,ORD-014956,3,R04,invalid_or_out_of_range_date,REMOVED,order_date,yesterday,,order_date is not a valid YYYY-MM-DD date
+L000111,33367,ORD-015084,3,R06,invalid_unit_price,REMOVED,unit_price,-10.19,,"unit_price is zero, negative or not a number"
+L000112,34627,ORD-015645,3,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000113,34684,ORD-015671,1,R04,invalid_or_out_of_range_date,REMOVED,order_date,yesterday,,order_date is not a valid YYYY-MM-DD date
+L000114,34934,ORD-015788,1,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000115,35019,ORD-015826,3,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000116,35251,ORD-015929,3,R05,invalid_quantity,REMOVED,quantity,-4,,quantity is not a positive whole number
+L000117,35648,ORD-016113,2,R12,invalid_category_region_segment,REPAIRED,customer_segment,Enterprise,Small Business,customer_segment is not an allowed value; taken from the other rows of this customer_id
+L000118,35760,ORD-001014,5,R09,order_header_conflict,REMOVED,order_id,ORD-001014,,"customer, date or region disagrees with the rest of the order"
+L000119,36092,ORD-016318,1,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000120,36930,ORD-016693,1,R11,text_standardised,REPAIRED,region, North,North,region: spaces or letter case standardised
+L000121,37008,ORD-016732,1,R06,invalid_unit_price,REMOVED,unit_price,-50.78,,"unit_price is zero, negative or not a number"
+L000122,37201,ORD-022232,5,R09,order_header_conflict,REMOVED,order_id,ORD-022232,,"customer, date or region disagrees with the rest of the order"
+L000123,37205,ORD-016827,2,R13,missing_value_repaired,REPAIRED,region,,North,region is blank; taken from the other rows of this customer_id
+L000124,37989,ORD-017184,1,R12,invalid_category_region_segment,REPAIRED,category,Electroincs,Clothing,category is not an allowed value; taken from the other rows of this product_id
+L000125,37995,ORD-017186,2,R10,profit_mismatch,REPAIRED,profit,102.59,113.07,profit recalculated as revenue - cost
+L000126,38050,ORD-017210,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000127,38072,ORD-017220,1,R13,missing_value_repaired,REPAIRED,category,,Sports & Outdoors,category is blank; taken from the other rows of this product_id
+L000128,39073,ORD-017673,3,R10,profit_mismatch,REPAIRED,profit,-7.34,12.66,profit recalculated as revenue - cost
+L000129,39177,ORD-017720,1,R11,text_standardised,REPAIRED,category,SPORTS & OUTDOORS,Sports & Outdoors,category: spaces or letter case standardised
+L000130,39229,ORD-017739,3,R07,revenue_mismatch,REPAIRED,revenue,155.99,138.03,revenue recalculated as quantity x unit_price
+L000131,39235,ORD-017741,3,R05,invalid_quantity,REMOVED,quantity,-2,,quantity is not a positive whole number
+L000132,39254,ORD-017749,2,R13,missing_value_repaired,REPAIRED,category,,Sports & Outdoors,category is blank; taken from the other rows of this product_id
+L000133,39334,ORD-017782,6,R13,missing_value_repaired,REPAIRED,region,,East,region is blank; taken from the other rows of this customer_id
+L000134,39450,ORD-017837,2,R12,invalid_category_region_segment,REPAIRED,region,Nrth,South,region is not an allowed value; taken from the other rows of this customer_id
+L000135,39509,ORD-017867,1,R13,missing_value_repaired,REPAIRED,customer_segment,,Corporate,customer_segment is blank; taken from the other rows of this customer_id
+L000136,40146,ORD-018153,3,R08,price_outlier,REMOVED,unit_price,2293.00,,unit_price is outside 0.5x to 2.0x of the product's median price
+L000137,40199,ORD-018175,2,R07,revenue_mismatch,REPAIRED,revenue,73.96,101.26,revenue recalculated as quantity x unit_price
+L000138,40447,ORD-018286,2,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000139,40456,ORD-018290,1,R11,text_standardised,REPAIRED,category,ELECTRONICS,Electronics,category: spaces or letter case standardised
+L000140,40956,ORD-018521,4,R11,text_standardised,REPAIRED,region,North  ,North,region: spaces or letter case standardised
+L000141,41155,ORD-018617,2,R13,missing_value_repaired,REPAIRED,unit_price,,30.94,unit_price is blank; rebuilt as revenue / quantity
+L000142,41185,ORD-018628,3,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000143,41212,ORD-018639,1,R13,missing_value_repaired,REPAIRED,category,,Electronics,category is blank; taken from the other rows of this product_id
+L000144,41419,ORD-018732,3,R13,missing_value_repaired,REPAIRED,category,,Sports & Outdoors,category is blank; taken from the other rows of this product_id
+L000145,41712,ORD-018870,2,R03,missing_required_value,REMOVED,cost,,,required field 'cost' is blank and cannot be repaired
+L000146,41749,ORD-018887,1,R13,missing_value_repaired,REPAIRED,region,,West,region is blank; taken from the other rows of this customer_id
+L000147,41802,ORD-018911,1,R12,invalid_category_region_segment,REPAIRED,category,Electroincs,Clothing,category is not an allowed value; taken from the other rows of this product_id
+L000148,41991,ORD-018995,2,R10,profit_mismatch,REPAIRED,profit,-47.06,2.13,profit recalculated as revenue - cost
+L000149,42095,ORD-019042,2,R08,price_outlier,REMOVED,unit_price,2042.00,,unit_price is outside 0.5x to 2.0x of the product's median price
+L000150,42206,ORD-019090,2,R10,profit_mismatch,REPAIRED,profit,-26.24,22.6,profit recalculated as revenue - cost
+L000151,42302,ORD-019130,4,R05,invalid_quantity,REMOVED,quantity,-1,,quantity is not a positive whole number
+L000152,42717,ORD-019320,2,R12,invalid_category_region_segment,REPAIRED,region,Central,South,region is not an allowed value; taken from the other rows of this customer_id
+L000153,43007,ORD-001279,6,R09,order_header_conflict,REMOVED,order_id,ORD-001279,,"customer, date or region disagrees with the rest of the order"
+L000154,43021,ORD-019463,2,R13,missing_value_repaired,REPAIRED,unit_price,,69.36,unit_price is blank; rebuilt as revenue / quantity
+L000155,43128,ORD-019518,3,R13,missing_value_repaired,REPAIRED,customer_segment,,Consumer,customer_segment is blank; taken from the other rows of this customer_id
+L000156,43512,ORD-019681,1,R05,invalid_quantity,REMOVED,quantity,0,,quantity is not a positive whole number
+L000157,43641,ORD-019740,1,R13,missing_value_repaired,REPAIRED,customer_segment,,Small Business,customer_segment is blank; taken from the other rows of this customer_id
+L000158,44180,ORD-019985,1,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000159,44365,ORD-020077,1,R12,invalid_category_region_segment,REPAIRED,customer_segment,Enterprise,Corporate,customer_segment is not an allowed value; taken from the other rows of this customer_id
+L000160,44657,ORD-020206,1,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000161,44854,ORD-020293,3,R03,missing_required_value,REMOVED,customer_id,,,required field 'customer_id' is blank and cannot be repaired
+L000162,44878,ORD-020304,4,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000163,45064,ORD-020379,4,R11,text_standardised,REPAIRED,category,Home & Kitchen  ,Home & Kitchen,category: spaces or letter case standardised
+L000164,45133,ORD-020414,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000165,45166,ORD-020427,1,R02,conflicting_duplicate_key,REMOVED,,,,same order_id and line_number as an earlier row but different content; first occurrence kept
+L000166,45430,ORD-020548,3,R13,missing_value_repaired,REPAIRED,unit_price,,60.76,unit_price is blank; rebuilt as revenue / quantity
+L000167,45744,ORD-020690,2,R11,text_standardised,REPAIRED,region,EAST,East,region: spaces or letter case standardised
+L000168,46069,,2,R03,missing_required_value,REMOVED,order_id,,,required field 'order_id' is blank and cannot be repaired
+L000169,46243,ORD-020908,2,R13,missing_value_repaired,REPAIRED,customer_segment,,Consumer,customer_segment is blank; taken from the other rows of this customer_id
+L000170,46732,ORD-021128,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000171,46890,ORD-021204,3,R13,missing_value_repaired,REPAIRED,region,,West,region is blank; taken from the other rows of this customer_id
+L000172,46920,ORD-021218,2,R12,invalid_category_region_segment,REPAIRED,customer_segment,Unknown,Small Business,customer_segment is not an allowed value; taken from the other rows of this customer_id
+L000173,47633,ORD-021537,1,R13,missing_value_repaired,REPAIRED,unit_price,,51.46,unit_price is blank; rebuilt as revenue / quantity
+L000174,48110,ORD-021754,4,R13,missing_value_repaired,REPAIRED,region,,South,region is blank; taken from the other rows of this customer_id
+L000175,48327,ORD-021850,1,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000176,49182,ORD-022251,2,R01,exact_duplicate_row,REMOVED,,,,identical to an earlier row; first copy kept
+L000177,49452,ORD-022369,3,R13,missing_value_repaired,REPAIRED,region,,West,region is blank; taken from the other rows of this customer_id
+L000178,49561,ORD-022415,2,R13,missing_value_repaired,REPAIRED,unit_price,,61.25,unit_price is blank; rebuilt as revenue / quantity
+L000179,49700,ORD-022482,1,R13,missing_value_repaired,REPAIRED,customer_segment,,Small Business,customer_segment is blank; taken from the other rows of this customer_id
+L000180,49707,ORD-022484,4,R10,profit_mismatch,REPAIRED,profit,0.84,12.27,profit recalculated as revenue - cost
+L000181,49796,ORD-022517,3,R03,missing_required_value,REMOVED,cost,,,required field 'cost' is blank and cannot be repaired
+L000182,49873,ORD-022549,1,R11,text_standardised,REPAIRED,category,Clothing  ,Clothing,category: spaces or letter case standardised

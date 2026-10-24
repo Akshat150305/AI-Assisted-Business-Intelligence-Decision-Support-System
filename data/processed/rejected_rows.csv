@@ -1,0 +1,83 @@
+source_row,order_id,line_number,order_date,customer_id,customer_segment,product_id,product_name,category,region,quantity,unit_price,revenue,cost,profit,rejection_rules,rejection_reasons
+2279,ORD-001056,2,2032-06-26,C0939,Small Business,P036,Electric Toothbrush,Beauty & Personal Care,West,3,35.08,105.24,57.75,47.49,R04,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+2388,ORD-001101,2,2024-02-15,C0994,Consumer,P001,Wireless Earbuds,Electronics,North,1,6084.00,6084.00,48.27,12.57,R08,unit_price is outside 0.5x to 2.0x of the product's median price
+2664,ORD-001216,1,2024-02-19,C0184,Corporate,P022,Formal Shirt,Clothing,South,4,0.00,138.16,65.30,72.86,R06,"unit_price is zero, negative or not a number"
+2893,ORD-001329,1,2024-02-23,C0038,Consumer,P040,Beard Trimmer,Beauty & Personal Care,South,5,30.45,91.35,51.48,39.87,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+3308,ORD-001518,5,2024-03-01,C0068,Corporate,P023,Wool Socks,Clothing,South,2,10.04,20.08,7.98,12.10,R01,identical to an earlier row; first copy kept
+3676,ORD-001696,1,2024-03-07,C0621,Corporate,P022,Formal Shirt,Clothing,West,4,35.39,141.56,65.18,76.38,R01,identical to an earlier row; first copy kept
+3799,ORD-001750,3,2024-03-09,,Consumer,P010,Non-stick Pan Set,Home & Kitchen,East,1,57.62,57.62,35.19,22.43,R03,required field 'customer_id' is blank and cannot be repaired
+4050,ORD-001861,3,2024-03-13,C0221,Small Business,P010,Non-stick Pan Set,Home & Kitchen,South,3,57.29,171.87,108.60,63.27,R01,identical to an earlier row; first copy kept
+6795,,1,2024-04-27,C1078,Consumer,P011,Electric Kettle,Home & Kitchen,South,2,30.29,60.58,36.47,24.11,R03,required field 'order_id' is blank and cannot be repaired
+8280,,1,2024-05-22,C0050,Corporate,P011,Electric Kettle,Home & Kitchen,North,3,30.35,91.05,56.69,34.36,R03,required field 'order_id' is blank and cannot be repaired
+11863,ORD-005422,3,2024-07-21,C0560,Corporate,P027,Camping Tent,Sports & Outdoors,South,5,121.04,605.20,420.17,185.03,R01,identical to an earlier row; first copy kept
+11898,ORD-005436,1,2024-07-22,C0422,Consumer,P011,Electric Kettle,Home & Kitchen,North,-2,30.67,61.34,37.37,23.97,R05,quantity is not a positive whole number
+11925,ORD-005445,1,2024-07-22,,Corporate,P022,Formal Shirt,Clothing,South,5,35.18,175.90,78.41,97.49,R03,required field 'customer_id' is blank and cannot be repaired
+11950,ORD-005454,1,2031-09-17,C0697,Small Business,P018,Denim Jeans,Clothing,West,3,51.54,154.62,74.55,80.07,R04,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+13940,ORD-006364,3,2024-08-24,C0128,Consumer,P011,Electric Kettle,Home & Kitchen,North,2,30.03,60.06,37.67,22.39,R01,identical to an earlier row; first copy kept
+15533,ORD-007077,1,2024-09-17,C0803,Corporate,P010,Non-stick Pan Set,Home & Kitchen,West,10,59.69,596.90,366.03,230.87,R01,identical to an earlier row; first copy kept
+17734,ORD-008055,3,2024-10-19,C0901,Small Business,P017,Cotton T-Shirt,Clothing,South,1,15.53,15.53,6.38,9.15,R01,identical to an earlier row; first copy kept
+18838,ORD-008534,1,2024-11-03,,Corporate,P011,Electric Kettle,Home & Kitchen,West,2,30.85,61.70,37.80,23.90,R03,required field 'customer_id' is blank and cannot be repaired
+19036,ORD-008628,2,2024-11-06,C0934,Corporate,P030,Cycling Helmet,Sports & Outdoors,West,7,45.96,183.84,113.19,70.65,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+19483,ORD-010102,7,2024-11-12,C0683,Consumer,P036,Electric Toothbrush,Beauty & Personal Care,North,1,35.69,35.69,19.32,16.37,R09,"customer, date or region disagrees with the rest of the order"
+19820,ORD-008986,2,31/02/2025,C1102,Small Business,P010,Non-stick Pan Set,Home & Kitchen,South,3,60.21,180.63,110.17,70.46,R04,order_date is not a valid YYYY-MM-DD date
+19965,ORD-009054,3,2025-02-30,C0221,Small Business,P030,Cycling Helmet,Sports & Outdoors,South,1,44.52,44.52,28.16,16.36,R04,order_date is not a valid YYYY-MM-DD date
+20082,ORD-009106,1,2024-11-20,C0908,Corporate,P023,Wool Socks,Clothing,North,8,0.00,82.00,32.55,49.45,R06,"unit_price is zero, negative or not a number"
+20640,ORD-009374,4,2024-11-27,C0976,Consumer,P024,Sneakers,Clothing,East,0,69.84,69.84,40.84,29.00,R05,quantity is not a positive whole number
+21831,ORD-009922,2,2024-12-11,C0276,Consumer,P036,Electric Toothbrush,Beauty & Personal Care,South,1,34.52,34.52,-19.32,15.20,R14,cost is negative or not a number
+22098,ORD-010045,1,2024-12-14,C1033,Consumer,P006,HD Webcam,Electronics,South,-1,43.36,43.36,34.04,9.32,R05,quantity is not a positive whole number
+22122,ORD-010055,2,2024-12-14,C0300,Small Business,P040,Beard Trimmer,Beauty & Personal Care,East,2,29.44,58.88,,22.98,R03,required field 'cost' is blank and cannot be repaired
+22282,ORD-010121,1,2024-12-15,C0003,Small Business,P035,Perfume,Beauty & Personal Care,West,2,63.16,126.32,51.04,75.28,R01,identical to an earlier row; first copy kept
+22549,ORD-010248,2,2024-12-19,,Corporate,P026,Dumbbell Set,Sports & Outdoors,West,8,81.47,651.76,431.90,219.86,R03,required field 'customer_id' is blank and cannot be repaired
+23118,ORD-010496,3,2024-12-25,C0238,Consumer,P010,Non-stick Pan Set,Home & Kitchen,West,4,61.75,123.50,72.12,51.38,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+23763,ORD-010794,1,2025-02-30,C0491,Small Business,P023,Wool Socks,Clothing,East,3,10.03,30.09,11.94,18.15,R04,order_date is not a valid YYYY-MM-DD date
+24318,ORD-011039,1,2025-01-10,C0567,Corporate,P005,USB-C Charger,Electronics,West,,21.30,191.70,117.22,74.48,R03,required field 'quantity' is blank and cannot be repaired
+24764,ORD-011254,1,2025-01-18,C0380,Small Business,P007,Mechanical Keyboard,Electronics,West,1,93.02,93.02,-67.79,25.23,R14,cost is negative or not a number
+25242,ORD-011459,1,2025-01-25,C0758,Consumer,P020,Running Shorts,Clothing,West,1,19.51,19.51,9.09,10.42,R01,identical to an earlier row; first copy kept
+25538,ORD-011594,1,2025-01-30,C0420,Consumer,P007,Mechanical Keyboard,Electronics,West,5,92.20,276.60,201.27,75.33,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+25720,ORD-011673,2,2025-02-02,C0354,Consumer,P021,Hoodie,Clothing,East,1,39.36,39.36,19.20,20.16,R01,identical to an earlier row; first copy kept
+26346,ORD-011952,3,2025-02-12,C0786,Corporate,P002,Bluetooth Speaker,Electronics,South,3,51.36,154.08,116.02,38.06,R01,identical to an earlier row; first copy kept
+26389,ORD-011973,1,2030-04-28,C0778,Corporate,P020,Running Shorts,Clothing,North,4,20.21,80.84,35.37,45.47,R04,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+26784,ORD-012149,2,2025-02-19,C0278,Corporate,P018,Denim Jeans,Clothing,South,,51.28,256.40,123.56,132.84,R03,required field 'quantity' is blank and cannot be repaired
+26846,ORD-012175,3,2025-02-20,C0477,Small Business,P024,Sneakers,Clothing,South,2,7036.00,14072.00,80.89,59.83,R08,unit_price is outside 0.5x to 2.0x of the product's median price
+26914,ORD-012206,4,2025-02-21,C0434,Small Business,P006,HD Webcam,Electronics,West,3,47.40,47.40,34.14,13.26,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+26996,ORD-012243,1,2025-02-22,C0214,Corporate,P007,Mechanical Keyboard,Electronics,West,,90.12,540.72,412.64,128.08,R03,required field 'quantity' is blank and cannot be repaired
+27507,ORD-012469,1,2025-13-40,C0719,Consumer,P005,USB-C Charger,Electronics,East,1,20.08,20.08,13.11,6.97,R04,order_date is not a valid YYYY-MM-DD date
+28536,ORD-012936,2,2025-03-18,,Consumer,P010,Non-stick Pan Set,Home & Kitchen,North,3,62.14,186.42,111.42,75.00,R03,required field 'customer_id' is blank and cannot be repaired
+29128,ORD-013193,1,2025-03-24,C0473,Small Business,P008,Gaming Mouse,Electronics,North,4,39.75,159.00,-114.02,44.98,R14,cost is negative or not a number
+29255,ORD-013250,2,2025-03-26,,Small Business,P011,Electric Kettle,Home & Kitchen,South,2,30.51,61.02,38.08,22.94,R03,required field 'customer_id' is blank and cannot be repaired
+29651,ORD-013410,2,2025-03-31,C0632,Corporate,P011,Electric Kettle,Home & Kitchen,West,5,31.51,157.55,93.12,64.43,R01,identical to an earlier row; first copy kept
+30733,ORD-013899,1,2025-04-16,C0198,Corporate,P010,Non-stick Pan Set,Home & Kitchen,West,0,60.23,542.07,328.62,213.45,R05,quantity is not a positive whole number
+31639,ORD-014305,1,2031-09-05,C0344,Consumer,P007,Mechanical Keyboard,Electronics,East,1,87.15,87.15,68.87,18.28,R04,order_date is outside the allowed period 2024-01-01 to 2025-12-31
+31813,ORD-014386,1,2025-05-02,,Consumer,P011,Electric Kettle,Home & Kitchen,East,1,28.15,28.15,18.64,9.51,R03,required field 'customer_id' is blank and cannot be repaired
+33092,ORD-014956,3,yesterday,C0792,Small Business,P001,Wireless Earbuds,Electronics,South,2,62.16,124.32,93.65,30.67,R04,order_date is not a valid YYYY-MM-DD date
+33367,ORD-015084,3,2025-05-24,C0778,Corporate,P023,Wool Socks,Clothing,North,4,-10.19,40.76,16.41,24.35,R06,"unit_price is zero, negative or not a number"
+34627,ORD-015645,3,2025-06-13,,Consumer,P011,Electric Kettle,Home & Kitchen,South,2,31.23,62.46,38.47,23.99,R03,required field 'customer_id' is blank and cannot be repaired
+34684,ORD-015671,1,yesterday,C0372,Consumer,P008,Gaming Mouse,Electronics,South,1,42.06,42.06,28.43,13.63,R04,order_date is not a valid YYYY-MM-DD date
+34934,ORD-015788,1,2025-06-18,,Consumer,P003,Smart Watch,Electronics,North,2,132.09,264.18,218.59,45.59,R03,required field 'customer_id' is blank and cannot be repaired
+35019,ORD-015826,3,2025-06-19,C0481,Small Business,P009,Air Fryer,Home & Kitchen,South,4,95.17,380.68,248.89,131.79,R01,identical to an earlier row; first copy kept
+35251,ORD-015929,3,2025-06-22,C0673,Corporate,P012,Blender,Home & Kitchen,West,-4,52.14,208.56,129.27,79.29,R05,quantity is not a positive whole number
+35760,ORD-001014,5,2025-06-29,C0506,Corporate,P023,Wool Socks,Clothing,West,4,10.04,40.16,16.13,24.03,R09,"customer, date or region disagrees with the rest of the order"
+36092,ORD-016318,1,2025-07-04,C0229,Small Business,P001,Wireless Earbuds,Electronics,East,5,56.80,170.40,143.58,26.82,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+37008,ORD-016732,1,2025-07-18,C0477,Small Business,P002,Bluetooth Speaker,Electronics,South,3,-50.78,152.34,116.82,35.52,R06,"unit_price is zero, negative or not a number"
+37201,ORD-022232,5,2025-07-21,C0155,Small Business,P005,USB-C Charger,Electronics,North,4,20.52,82.08,51.72,30.36,R09,"customer, date or region disagrees with the rest of the order"
+38050,ORD-017210,1,2025-08-01,C0563,Consumer,P021,Hoodie,Clothing,West,2,40.32,80.64,39.40,41.24,R01,identical to an earlier row; first copy kept
+39235,ORD-017741,3,2025-08-17,C0390,Consumer,P004,Power Bank,Electronics,West,-2,26.39,52.78,36.37,16.41,R05,quantity is not a positive whole number
+40146,ORD-018153,3,2025-08-30,C0247,Corporate,P029,Football,Sports & Outdoors,East,4,2293.00,9172.00,50.75,40.97,R08,unit_price is outside 0.5x to 2.0x of the product's median price
+40447,ORD-018286,2,2025-09-03,,Small Business,P012,Blender,Home & Kitchen,East,1,48.94,48.94,33.24,15.70,R03,required field 'customer_id' is blank and cannot be repaired
+41185,ORD-018628,3,2025-09-14,C0302,Corporate,P039,Lipstick Set,Beauty & Personal Care,North,4,21.09,84.36,28.83,55.53,R01,identical to an earlier row; first copy kept
+41712,ORD-018870,2,2025-09-21,C0210,Small Business,P002,Bluetooth Speaker,Electronics,South,2,50.82,101.64,,-4.87,R03,required field 'cost' is blank and cannot be repaired
+42095,ORD-019042,2,2025-09-26,C0953,Small Business,P005,USB-C Charger,Electronics,North,3,2042.00,6126.00,52.48,8.78,R08,unit_price is outside 0.5x to 2.0x of the product's median price
+42302,ORD-019130,4,2025-09-28,C0615,Small Business,P035,Perfume,Beauty & Personal Care,South,-1,59.97,59.97,25.63,34.34,R05,quantity is not a positive whole number
+43007,ORD-001279,6,2025-10-08,C0908,Corporate,P036,Electric Toothbrush,Beauty & Personal Care,North,1,36.46,36.46,19.75,16.71,R09,"customer, date or region disagrees with the rest of the order"
+43512,ORD-019681,1,2025-10-14,C1135,Consumer,P006,HD Webcam,Electronics,West,0,45.42,90.84,67.78,23.06,R05,quantity is not a positive whole number
+44180,ORD-019985,1,2025-10-22,,Consumer,P001,Wireless Earbuds,Electronics,West,3,62.13,186.39,143.95,42.44,R03,required field 'customer_id' is blank and cannot be repaired
+44657,ORD-020206,1,2025-10-28,C0236,Corporate,P014,Storage Containers,Home & Kitchen,West,9,25.98,155.88,78.28,77.60,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+44854,ORD-020293,3,2025-10-31,,Consumer,P005,USB-C Charger,Electronics,South,2,20.46,40.92,26.49,14.43,R03,required field 'customer_id' is blank and cannot be repaired
+44878,ORD-020304,4,2025-10-31,C0598,Consumer,P025,Yoga Mat,Sports & Outdoors,East,1,24.89,24.89,13.29,11.60,R01,identical to an earlier row; first copy kept
+45133,ORD-020414,1,2025-11-03,C0595,Corporate,P018,Denim Jeans,Clothing,North,2,51.15,102.30,51.42,50.88,R01,identical to an earlier row; first copy kept
+45166,ORD-020427,1,2025-11-03,C0747,Consumer,P004,Power Bank,Electronics,South,3,25.27,50.54,36.56,13.98,R02,same order_id and line_number as an earlier row but different content; first occurrence kept
+46069,,2,2025-11-14,C0133,Consumer,P034,Shampoo,Beauty & Personal Care,East,4,12.75,51.00,21.27,29.73,R03,required field 'order_id' is blank and cannot be repaired
+46732,ORD-021128,1,2025-11-22,C1189,Small Business,P023,Wool Socks,Clothing,North,3,10.02,30.06,12.37,17.69,R01,identical to an earlier row; first copy kept
+48327,ORD-021850,1,2025-12-08,C0145,Corporate,P018,Denim Jeans,Clothing,South,3,52.12,156.36,75.34,81.02,R01,identical to an earlier row; first copy kept
+49182,ORD-022251,2,2025-12-17,C0750,Corporate,P040,Beard Trimmer,Beauty & Personal Care,West,4,30.13,120.52,70.27,50.25,R01,identical to an earlier row; first copy kept
+49796,ORD-022517,3,2025-12-24,C0015,Consumer,P036,Electric Toothbrush,Beauty & Personal Care,South,1,34.41,34.41,,14.08,R03,required field 'cost' is blank and cannot be repaired

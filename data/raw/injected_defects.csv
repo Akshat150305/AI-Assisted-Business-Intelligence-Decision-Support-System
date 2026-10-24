@@ -1,0 +1,183 @@
+defect_id,source_row,order_id,line_number,defect_type,description,expected_action,expected_rule
+D001,170,ORD-000085,1,missing_unit_price,unit_price blanked,REPAIRED,R13
+D002,329,ORD-000163,1,invalid_category,category replaced by 'Hme & Kitchen',REPAIRED,R12
+D003,698,ORD-000341,1,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D004,809,ORD-000391,2,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D005,904,ORD-000438,2,invalid_category,category replaced by 'Hme & Kitchen',REPAIRED,R12
+D006,1158,ORD-000548,5,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D007,1943,ORD-000904,2,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D008,2279,ORD-001056,2,future_date,order_date set to future date 2032-06-26,REMOVED,R04
+D009,2388,ORD-001101,2,price_outlier,unit_price and revenue multiplied by 100 (decimal slip),REMOVED,R08
+D010,2650,ORD-001211,2,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D011,2664,ORD-001216,1,nonpositive_unit_price,unit_price set to zero or negative,REMOVED,R06
+D012,2893,ORD-001329,1,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D013,3070,ORD-001412,1,missing_region,region blanked,REPAIRED,R13
+D014,3308,ORD-001518,5,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D015,3509,ORD-001622,1,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D016,3676,ORD-001696,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D017,3787,ORD-001745,1,missing_category,category blanked,REPAIRED,R13
+D018,3799,ORD-001750,3,missing_customer_id,customer_id blanked,REMOVED,R03
+D019,4050,ORD-001861,3,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D020,4768,ORD-002186,1,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D021,6010,ORD-002741,3,invalid_segment,customer_segment replaced by 'SMB',REPAIRED,R12
+D022,6559,ORD-002997,2,invalid_region,region replaced by 'Nrth',REPAIRED,R12
+D023,6795,,1,missing_order_id,order_id blanked,REMOVED,R03
+D024,7283,ORD-003337,1,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D025,7547,ORD-003447,3,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D026,8169,ORD-003747,2,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D027,8175,ORD-003749,1,invalid_category,category replaced by 'Unknown',REPAIRED,R12
+D028,8280,,1,missing_order_id,order_id blanked,REMOVED,R03
+D029,9474,ORD-004350,2,invalid_region,region replaced by 'Central',REPAIRED,R12
+D030,9841,ORD-004510,2,missing_region,region blanked,REPAIRED,R13
+D031,10280,ORD-004710,1,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D032,10438,ORD-004782,1,missing_region,region blanked,REPAIRED,R13
+D033,10508,ORD-004814,1,missing_unit_price,unit_price blanked,REPAIRED,R13
+D034,10772,ORD-004933,2,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D035,11398,ORD-005219,1,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D036,11863,ORD-005422,3,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D037,11898,ORD-005436,1,negative_quantity,quantity made negative,REMOVED,R05
+D038,11925,ORD-005445,1,missing_customer_id,customer_id blanked,REMOVED,R03
+D039,11950,ORD-005454,1,future_date,order_date set to future date 2031-09-17,REMOVED,R04
+D040,13267,ORD-006050,1,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D041,13442,ORD-006128,1,missing_category,category blanked,REPAIRED,R13
+D042,13940,ORD-006364,3,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D043,13945,ORD-006366,1,invalid_region,region replaced by 'Nrth',REPAIRED,R12
+D044,14470,ORD-006595,2,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D045,14714,ORD-006716,2,invalid_region,region replaced by 'Unknown',REPAIRED,R12
+D046,14918,ORD-006803,1,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D047,15031,ORD-006855,1,invalid_category,category replaced by 'Unknown',REPAIRED,R12
+D048,15533,ORD-007077,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D049,16352,ORD-007440,4,missing_region,region blanked,REPAIRED,R13
+D050,16703,ORD-007595,2,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D051,17100,ORD-007774,2,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D052,17309,ORD-007873,2,missing_category,category blanked,REPAIRED,R13
+D053,17734,ORD-008055,3,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D054,18009,ORD-008174,1,invalid_region,region replaced by 'N/A',REPAIRED,R12
+D055,18782,ORD-008511,1,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D056,18838,ORD-008534,1,missing_customer_id,customer_id blanked,REMOVED,R03
+D057,19036,ORD-008628,2,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D058,19050,ORD-008636,3,invalid_category,category replaced by 'Misc',REPAIRED,R12
+D059,19483,ORD-010102,7,order_header_conflict,line moved into order ORD-010102 (different customer and date),REMOVED,R09
+D060,19820,ORD-008986,2,invalid_date_text,order_date replaced by '31/02/2025',REMOVED,R04
+D061,19965,ORD-009054,3,invalid_date_text,order_date replaced by '2025-02-30',REMOVED,R04
+D062,20082,ORD-009106,1,nonpositive_unit_price,unit_price set to zero or negative,REMOVED,R06
+D063,20640,ORD-009374,4,zero_quantity,quantity set to 0,REMOVED,R05
+D064,20745,ORD-009428,2,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D065,21501,ORD-009776,1,invalid_region,region replaced by 'Central',REPAIRED,R12
+D066,21580,ORD-009809,1,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D067,21796,ORD-009909,1,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D068,21831,ORD-009922,2,negative_cost,cost made negative,REMOVED,R14
+D069,22026,ORD-010012,2,invalid_segment,customer_segment replaced by 'Unknown',REPAIRED,R12
+D070,22098,ORD-010045,1,negative_quantity,quantity made negative,REMOVED,R05
+D071,22122,ORD-010055,2,missing_cost,cost blanked,REMOVED,R03
+D072,22282,ORD-010121,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D073,22318,ORD-010135,2,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D074,22549,ORD-010248,2,missing_customer_id,customer_id blanked,REMOVED,R03
+D075,23118,ORD-010496,3,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D076,23763,ORD-010794,1,invalid_date_text,order_date replaced by '2025-02-30',REMOVED,R04
+D077,24063,ORD-010931,1,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D078,24318,ORD-011039,1,missing_quantity,quantity blanked,REMOVED,R03
+D079,24721,ORD-011232,2,missing_category,category blanked,REPAIRED,R13
+D080,24764,ORD-011254,1,negative_cost,cost made negative,REMOVED,R14
+D081,24841,ORD-011293,1,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D082,25242,ORD-011459,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D083,25538,ORD-011594,1,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D084,25717,ORD-011672,2,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D085,25720,ORD-011673,2,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D086,26346,ORD-011952,3,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D087,26389,ORD-011973,1,future_date,order_date set to future date 2030-04-28,REMOVED,R04
+D088,26541,ORD-012038,4,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D089,26784,ORD-012149,2,missing_quantity,quantity blanked,REMOVED,R03
+D090,26846,ORD-012175,3,price_outlier,unit_price and revenue multiplied by 100 (decimal slip),REMOVED,R08
+D091,26914,ORD-012206,4,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D092,26996,ORD-012243,1,missing_quantity,quantity blanked,REMOVED,R03
+D093,27133,ORD-012307,1,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D094,27507,ORD-012469,1,invalid_date_text,order_date replaced by '2025-13-40',REMOVED,R04
+D095,27851,ORD-012620,2,invalid_segment,customer_segment replaced by 'Enterprise',REPAIRED,R12
+D096,28536,ORD-012936,2,missing_customer_id,customer_id blanked,REMOVED,R03
+D097,28958,ORD-013121,2,missing_category,category blanked,REPAIRED,R13
+D098,29128,ORD-013193,1,negative_cost,cost made negative,REMOVED,R14
+D099,29255,ORD-013250,2,missing_customer_id,customer_id blanked,REMOVED,R03
+D100,29627,ORD-013402,1,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D101,29651,ORD-013410,2,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D102,29907,ORD-013529,1,invalid_category,category replaced by 'Misc',REPAIRED,R12
+D103,30194,ORD-013666,1,missing_category,category blanked,REPAIRED,R13
+D104,30604,ORD-013842,1,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D105,30733,ORD-013899,1,zero_quantity,quantity set to 0,REMOVED,R05
+D106,31639,ORD-014305,1,future_date,order_date set to future date 2031-09-05,REMOVED,R04
+D107,31813,ORD-014386,1,missing_customer_id,customer_id blanked,REMOVED,R03
+D108,31993,ORD-014466,2,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D109,32735,ORD-014792,3,missing_unit_price,unit_price blanked,REPAIRED,R13
+D110,33092,ORD-014956,3,invalid_date_text,order_date replaced by 'yesterday',REMOVED,R04
+D111,33367,ORD-015084,3,nonpositive_unit_price,unit_price set to zero or negative,REMOVED,R06
+D112,34627,ORD-015645,3,missing_customer_id,customer_id blanked,REMOVED,R03
+D113,34684,ORD-015671,1,invalid_date_text,order_date replaced by 'yesterday',REMOVED,R04
+D114,34934,ORD-015788,1,missing_customer_id,customer_id blanked,REMOVED,R03
+D115,35019,ORD-015826,3,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D116,35251,ORD-015929,3,negative_quantity,quantity made negative,REMOVED,R05
+D117,35648,ORD-016113,2,invalid_segment,customer_segment replaced by 'Enterprise',REPAIRED,R12
+D118,35760,ORD-001014,5,order_header_conflict,line moved into order ORD-001014 (different customer and date),REMOVED,R09
+D119,36092,ORD-016318,1,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D120,36930,ORD-016693,1,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D121,37008,ORD-016732,1,nonpositive_unit_price,unit_price set to zero or negative,REMOVED,R06
+D122,37201,ORD-022232,5,order_header_conflict,line moved into order ORD-022232 (different customer and date),REMOVED,R09
+D123,37205,ORD-016827,2,missing_region,region blanked,REPAIRED,R13
+D124,37989,ORD-017184,1,invalid_category,category replaced by 'Electroincs',REPAIRED,R12
+D125,37995,ORD-017186,2,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D126,38050,ORD-017210,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D127,38072,ORD-017220,1,missing_category,category blanked,REPAIRED,R13
+D128,39073,ORD-017673,3,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D129,39177,ORD-017720,1,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D130,39229,ORD-017739,3,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D131,39235,ORD-017741,3,negative_quantity,quantity made negative,REMOVED,R05
+D132,39254,ORD-017749,2,missing_category,category blanked,REPAIRED,R13
+D133,39334,ORD-017782,6,missing_region,region blanked,REPAIRED,R13
+D134,39450,ORD-017837,2,invalid_region,region replaced by 'Nrth',REPAIRED,R12
+D135,39509,ORD-017867,1,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D136,40146,ORD-018153,3,price_outlier,unit_price and revenue multiplied by 100 (decimal slip),REMOVED,R08
+D137,40199,ORD-018175,2,revenue_mismatch,revenue changed so it no longer equals quantity x unit_price,REPAIRED,R07
+D138,40447,ORD-018286,2,missing_customer_id,customer_id blanked,REMOVED,R03
+D139,40456,ORD-018290,1,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D140,40956,ORD-018521,4,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D141,41155,ORD-018617,2,missing_unit_price,unit_price blanked,REPAIRED,R13
+D142,41185,ORD-018628,3,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D143,41212,ORD-018639,1,missing_category,category blanked,REPAIRED,R13
+D144,41419,ORD-018732,3,missing_category,category blanked,REPAIRED,R13
+D145,41712,ORD-018870,2,missing_cost,cost blanked,REMOVED,R03
+D146,41749,ORD-018887,1,missing_region,region blanked,REPAIRED,R13
+D147,41802,ORD-018911,1,invalid_category,category replaced by 'Electroincs',REPAIRED,R12
+D148,41991,ORD-018995,2,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D149,42095,ORD-019042,2,price_outlier,unit_price and revenue multiplied by 100 (decimal slip),REMOVED,R08
+D150,42206,ORD-019090,2,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D151,42302,ORD-019130,4,negative_quantity,quantity made negative,REMOVED,R05
+D152,42717,ORD-019320,2,invalid_region,region replaced by 'Central',REPAIRED,R12
+D153,43007,ORD-001279,6,order_header_conflict,line moved into order ORD-001279 (different customer and date),REMOVED,R09
+D154,43021,ORD-019463,2,missing_unit_price,unit_price blanked,REPAIRED,R13
+D155,43128,ORD-019518,3,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D156,43512,ORD-019681,1,zero_quantity,quantity set to 0,REMOVED,R05
+D157,43641,ORD-019740,1,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D158,44180,ORD-019985,1,missing_customer_id,customer_id blanked,REMOVED,R03
+D159,44365,ORD-020077,1,invalid_segment,customer_segment replaced by 'Enterprise',REPAIRED,R12
+D160,44657,ORD-020206,1,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D161,44854,ORD-020293,3,missing_customer_id,customer_id blanked,REMOVED,R03
+D162,44878,ORD-020304,4,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D163,45064,ORD-020379,4,category_case_whitespace,category case/whitespace changed,REPAIRED,R11
+D164,45133,ORD-020414,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D165,45166,ORD-020427,1,conflicting_duplicate_key,copy of an existing order line key with a different quantity,REMOVED,R02
+D166,45430,ORD-020548,3,missing_unit_price,unit_price blanked,REPAIRED,R13
+D167,45744,ORD-020690,2,region_case_whitespace,region case/whitespace changed,REPAIRED,R11
+D168,46069,,2,missing_order_id,order_id blanked,REMOVED,R03
+D169,46243,ORD-020908,2,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D170,46732,ORD-021128,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D171,46890,ORD-021204,3,missing_region,region blanked,REPAIRED,R13
+D172,46920,ORD-021218,2,invalid_segment,customer_segment replaced by 'Unknown',REPAIRED,R12
+D173,47633,ORD-021537,1,missing_unit_price,unit_price blanked,REPAIRED,R13
+D174,48110,ORD-021754,4,missing_region,region blanked,REPAIRED,R13
+D175,48327,ORD-021850,1,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D176,49182,ORD-022251,2,exact_duplicate_row,exact copy of an existing row,REMOVED,R01
+D177,49452,ORD-022369,3,missing_region,region blanked,REPAIRED,R13
+D178,49561,ORD-022415,2,missing_unit_price,unit_price blanked,REPAIRED,R13
+D179,49700,ORD-022482,1,missing_customer_segment,customer_segment blanked,REPAIRED,R13
+D180,49707,ORD-022484,4,profit_mismatch,profit changed so it no longer equals revenue - cost,REPAIRED,R10
+D181,49796,ORD-022517,3,missing_cost,cost blanked,REMOVED,R03
+D182,49873,ORD-022549,1,category_case_whitespace,category case/whitespace changed,REPAIRED,R11

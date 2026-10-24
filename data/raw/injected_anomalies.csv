@@ -1,0 +1,5 @@
+anomaly_id,anomaly_type,start_date,end_date,region,category,affected_metric,multiplier,affected_order_id,description
+A1,revenue_spike,2025-03-17,2025-03-23,South,,revenue,2.5,,South order volume multiplied by 2.5 for one week (simulated event).
+A2,revenue_drop,2025-06-09,2025-06-15,West,,revenue,0.35,,West order volume cut to 35% for one week (simulated event).
+A3,margin_squeeze,2025-09-01,2025-09-28,,Electronics,profit_margin,1.35,,"Electronics unit cost multiplied by 1.35 for four weeks; revenue unaffected, so the effect shows in profit margin % (simulated event)."
+A4,single_large_order,2025-11-12,2025-11-12,,,revenue,25.0,ORD-020737,Quantities of one Corporate order multiplied by 25 (simulated event).

@@ -7,3 +7,6 @@ __pycache__/
 *.sqlite
 .vscode/
 .idea/
+# Large generated files: reproducible with "python run_pipeline.py" (fixed seed)
+data/raw/sales_raw.csv
+data/processed/sales_clean.csv
