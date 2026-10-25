@@ -1,5 +1,5 @@
 """One-command refresh: regenerate the synthetic data, clean it, build the database, export for
-Power BI, document the KPIs and run the anomaly detection.
+Power BI, document the KPIs, run the anomaly detection and write the Power BI specification.
 
     python run_pipeline.py
 
@@ -10,7 +10,7 @@ import sys
 
 from app_config import config
 from src import (anomaly_detection, anomaly_evaluation, data_generator, data_pipeline, database,
-                 kpi_catalogue, metrics, powerbi_export)
+                 kpi_catalogue, metrics, powerbi_export, powerbi_spec)
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
     print("\n=== Step 4/5: export Power BI tables ===")
     powerbi_export.main()
 
-    print("\n=== Step 5/5: KPI catalogue and anomaly detection ===")
+    print("\n=== Step 5/5: KPI catalogue, anomaly detection and Power BI specification ===")
     clean = database.load_clean_sales()
     kpi_catalogue.main()
     detections, result = anomaly_evaluation.run(clean)       # scoring vs planted labels happens AFTER detection
@@ -39,6 +39,9 @@ def main():
     print(f"planted events found   : {s['events_detected']} of {s['events']}  "
           f"(evaluation only; 4 events is too few to estimate accuracy)")
     print(f"evaluation report      : {config.ANOMALY_EVALUATION_REPORT}")
+
+    powerbi_spec.write_all(clean, detections)
+    print(f"power bi spec written  : {powerbi_spec.POWERBI_DIR.name}/ (4 documents; numbers from this run)")
 
     kpis = metrics.compute_kpis(clean)
     print("\n=== Headline KPIs (all clean data, synthetic) ===")
