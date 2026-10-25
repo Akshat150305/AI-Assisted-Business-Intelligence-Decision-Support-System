@@ -163,3 +163,37 @@ Relationships to create in Power BI: `fact_sales[order_date]` to `dim_date[date]
 ### Caution when adding up numbers
 
 **Distinct counts are not additive.** An order has one region and one segment, so order counts by region add up to the total. An order can contain several categories, so order counts by category add up to MORE than the total. The tests check both facts. Revenue and profit are additive across every dimension.
+
+---
+
+## 9. Anomaly table for Power BI (`data/exports/anomaly_weekly.csv`, Phase 4)
+
+Written by `run_pipeline.py` (step 5). One row per **series x complete week**, not only the flagged ones, so the Anomaly Monitor page can draw actual vs expected for every week. Filter `is_anomaly = True` for the flags. Method, parameters and results: `reports/anomaly_evaluation.md`.
+
+A series is one metric (`revenue`, `profit` or `profit_margin_pct`) for one scope: the whole business (`scope_type = all`), a region, a category or a customer segment. Weeks run Monday to Sunday and only complete weeks are scored.
+
+| Column | Description |
+|---|---|
+| `scope_type`, `scope_value` | `all`/`All`, `region`/`North`..., `category`/`Electronics`..., `customer_segment`/`Corporate`... |
+| `metric` | `revenue`, `profit` or `profit_margin_pct` |
+| `week_start`, `week_end` | Monday and Sunday of the week |
+| `observed` | The week's actual value |
+| `baseline` | Median of the previous 13 complete weeks (earlier weeks only) |
+| `spread` | 1.4826 x median absolute deviation of those weeks |
+| `expected_low`, `expected_high` | `baseline -/+ threshold x spread`, the "normal" band |
+| `deviation` | `(observed - baseline) / spread` (empty when not scored) |
+| `threshold` | Flag when `abs(deviation)` reaches this value (4.5) |
+| `status` | `evaluated`, `insufficient_history`, `zero_variance` or `no_observation` |
+| `is_anomaly` | True when evaluated and `abs(deviation) >= threshold` |
+| `direction` | `high` or `low` (flags only) |
+| `severity` | `moderate`, `high` or `extreme` (flags only) |
+| `suggested_check` | What an analyst should look at first (flags only). A question to investigate, not a cause. |
+
+**A flag is a statistical anomaly, not a confirmed business issue, and not a forecast.** The planted-anomaly labels are never in this table.
+
+### Other Phase 4 outputs
+
+| File | Purpose |
+|---|---|
+| `docs/kpi_catalogue.md` | KPI catalogue, generated from `src/kpi_catalogue.py` (meaning, formula, source, grain, stakeholders, caveats) |
+| `reports/anomaly_evaluation.md` | Generated evaluation: parameter history, planted events detected or not, false alarms, sensitivity, limitations |

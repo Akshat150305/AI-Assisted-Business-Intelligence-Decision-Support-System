@@ -45,6 +45,23 @@ CATEGORIES = [
 REGIONS = ["North", "South", "East", "West"]
 SEGMENTS = ["Consumer", "Small Business", "Corporate"]
 
+# ---------------------------------------------------------------- anomaly detection (Phase 4)
+# Parameter history (documented honestly, see reports/anomaly_evaluation.md):
+#   1. First choice, fixed before the detector was ever run: window 8 weeks, threshold 3.5.
+#   2. On the real data that flagged 6.1% of weeks. A simulation on PURE NOISE (no project data and
+#      no planted labels) showed the same problem: with only 8 weeks of history the robust spread
+#      is itself very noisy, so |z| >= 3.5 occurs in ~4.8% of weeks even when nothing is wrong.
+#   3. Revised using that noise simulation only: a 13-week (one quarter) window and a threshold of
+#      4.5 give about a 1% false-alarm rate on noise. The planted labels played no part in this choice.
+ANOMALY_WINDOW_WEEKS = 13       # baseline = the previous 13 complete weeks (one quarter)
+ANOMALY_MIN_HISTORY_WEEKS = 8   # fewer than 8 valid previous weeks -> "insufficient history", never flagged
+ANOMALY_THRESHOLD = 4.5         # |robust z| >= 4.5 is flagged
+ANOMALY_SEVERITY_BANDS = (8.0, 15.0)  # |z| below 8 = moderate, 8 to 15 = high, 15 or more = extreme
+ANOMALY_METRICS = ["revenue", "profit", "profit_margin_pct"]
+
+ANOMALY_WEEKLY_EXPORT = DATA_EXPORTS / "anomaly_weekly.csv"
+ANOMALY_EVALUATION_REPORT = REPORTS_DIR / "anomaly_evaluation.md"
+
 # ---------------------------------------------------------------- columns
 # Column order of the raw / clean sales file (one row = one order line).
 SALES_COLUMNS = [

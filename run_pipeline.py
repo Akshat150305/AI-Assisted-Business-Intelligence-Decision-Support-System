@@ -1,30 +1,45 @@
-"""One-command refresh: regenerate the synthetic data, clean it, build the database, export for Power BI.
+"""One-command refresh: regenerate the synthetic data, clean it, build the database, export for
+Power BI, document the KPIs and run the anomaly detection.
 
     python run_pipeline.py
 
-Later phases add their steps here (anomaly detection, findings, report).
+Later phases add their steps here (findings, report).
 ALL DATA IS SYNTHETIC.
 """
 import sys
 
-from src import data_generator, data_pipeline, database, metrics, powerbi_export
+from app_config import config
+from src import (anomaly_detection, anomaly_evaluation, data_generator, data_pipeline, database,
+                 kpi_catalogue, metrics, powerbi_export)
 
 
 def main():
-    print("=== Step 1/4: generate synthetic raw data ===")
+    print("=== Step 1/5: generate synthetic raw data ===")
     data_generator.write_datasets(data_generator.build_datasets())
     print("raw data written.\n")
 
-    print("=== Step 2/4: validate and clean ===")
+    print("=== Step 2/5: validate and clean ===")
     data_pipeline.main()
 
-    print("\n=== Step 3/4: build SQLite database ===")
+    print("\n=== Step 3/5: build SQLite database ===")
     database.main()
 
-    print("\n=== Step 4/4: export Power BI tables ===")
+    print("\n=== Step 4/5: export Power BI tables ===")
     powerbi_export.main()
 
+    print("\n=== Step 5/5: KPI catalogue and anomaly detection ===")
     clean = database.load_clean_sales()
+    kpi_catalogue.main()
+    detections, result = anomaly_evaluation.run(clean)       # scoring vs planted labels happens AFTER detection
+    rows = anomaly_detection.export_weekly(detections)
+    s = result["summary"]
+    print(f"anomaly table exported : {rows:,} series-weeks -> {config.ANOMALY_WEEKLY_EXPORT.name}")
+    print(f"flags                  : {s['flags']} of {s['evaluated_series_weeks']:,} scored series-weeks "
+          f"({s['flag_rate_pct']:.2f}%)")
+    print(f"planted events found   : {s['events_detected']} of {s['events']}  "
+          f"(evaluation only; 4 events is too few to estimate accuracy)")
+    print(f"evaluation report      : {config.ANOMALY_EVALUATION_REPORT}")
+
     kpis = metrics.compute_kpis(clean)
     print("\n=== Headline KPIs (all clean data, synthetic) ===")
     print(f"revenue          : {kpis['revenue']:,.2f}")
