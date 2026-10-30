@@ -89,3 +89,19 @@ NUMERIC_COLUMNS = ["line_number", "quantity", "unit_price", "revenue", "cost", "
 # ---------------------------------------------------------------- validation tolerances
 MONEY_TOLERANCE = 0.01          # revenue/profit may differ from the formula by at most 1 cent
 PRICE_BAND = (0.5, 2.0)         # unit price must be within 0.5x to 2x of the product's median price
+
+# ----------------------------------------------------------------------------- Phase 6: findings engine
+# These are JUDGEMENT CALLS, fixed before the rules were run on the data and documented in
+# reports/findings_summary.md. They decide what counts as "material"; change them and the findings change.
+FINDING_MATERIAL_CHANGE_PCT = 10.0      # revenue / profit change that deserves a finding (% vs the baseline period)
+FINDING_MARGIN_SHIFT_PP = 2.0           # profit-margin change (percentage points) that deserves a finding
+FINDING_CATEGORY_GAP_PP = 5.0           # category margin vs the whole-business margin (percentage points)
+FINDING_PRODUCT_GAP_PP = 5.0            # product margin vs its own category's margin (percentage points)
+FINDING_REGION_MARGIN_GAP_PP = 3.0      # region margin vs the whole-business margin (percentage points)
+FINDING_REGION_GROWTH_GAP_PP = 5.0      # region growth vs whole-business growth (percentage points)
+FINDING_MIN_SHARE_PCT = 2.0             # ignore categories/products/regions below this revenue share (too small to matter)
+FINDING_HIGH_CONFIDENCE_ORDERS = 1000   # distinct orders behind a comparison for "High" confidence
+FINDING_MEDIUM_CONFIDENCE_ORDERS = 300  # ... for "Medium" (below this: "Low")
+FINDING_ANOMALY_LOOKBACK_WEEKS = 13     # anomaly flags older than this many weeks are not turned into findings
+FINDINGS_EXPORT = DATA_EXPORTS / "findings.csv"
+FINDINGS_REPORT = REPORTS_DIR / "findings_summary.md"

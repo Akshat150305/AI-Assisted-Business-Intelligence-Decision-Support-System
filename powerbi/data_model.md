@@ -26,6 +26,7 @@ Why a star schema: slicers on a small dimension table filter the large fact tabl
 | `dim_product.csv` | Product dimension. Holds the category. | 3 |
 | `dim_customer.csv` | Customer dimension. Holds the region and the customer segment (a customer always belongs to exactly one region, so a sale's region = its customer's region). | 3 |
 | `anomaly_weekly.csv` | One row per scored series-week from the Phase 4 detector (scope x metric x week). | 17 |
+| `findings.csv` | Ranked findings from the Phase 6 rule-based engine (one row per finding; evidence joined with ' | '). A finished table: computed for the latest 12 months, so it does not react to the slicers. | 23 |
 | `kpi_summary.csv` | ANSWER KEY (SQL-computed headline KPIs, one row). Used only to check the DAX. Not on a deliverable page. | 11 |
 | `kpi_monthly.csv` | ANSWER KEY (SQL-computed monthly KPIs including month-on-month % change). | 11 |
 | `customer_metrics.csv` | ANSWER KEY / lifetime customer table (all dates). Not related to the other tables: it ignores the date slicer, so the dashboard's customer visuals are built from fact_sales instead. | 13 |
@@ -101,6 +102,34 @@ Why a star schema: slicers on a small dimension table filter the large fact tabl
 | `severity` | text |
 | `suggested_check` | text |
 
+### findings
+
+| Column | Power BI type |
+|---|---|
+| `rank` | whole |
+| `finding_id` | text |
+| `rule` | text |
+| `finding_type` | text |
+| `title` | text |
+| `metric` | text |
+| `scope` | text |
+| `period` | text |
+| `baseline_period` | text |
+| `observed_value` | decimal |
+| `baseline_value` | decimal |
+| `absolute_change` | decimal |
+| `pct_change` | decimal |
+| `unit` | text |
+| `priority_score` | decimal |
+| `profit_impact` | decimal |
+| `confidence` | text |
+| `evidence` | text |
+| `observed_fact` | text |
+| `possible_explanation` | text |
+| `recommended_action` | text |
+| `evidence_needed` | text |
+| `limitations` | text |
+
 ### kpi_summary
 
 | Column | Power BI type |
@@ -160,7 +189,7 @@ Why a star schema: slicers on a small dimension table filter the large fact tabl
 | `dim_customer[customer_id]` | `fact_sales[customer_id]` | One to many, single direction (one side filters many side) | Brings region and segment onto sales. |
 | `dim_date[date]` | `anomaly_weekly[week_start]` | One to many, single direction (one side filters many side) | Lets the date slicer filter the weeks shown on the anomaly page. |
 
-Leave `kpi_summary`, `kpi_monthly` and `customer_metrics` **without relationships** (answer key only): `kpi_summary`, `kpi_monthly`, `customer_metrics`. Do not enable bi-directional filtering anywhere.
+Leave these tables **without relationships**: `findings`, `kpi_summary`, `kpi_monthly`, `customer_metrics` (`findings` is a finished text table; the other three are the answer key). Do not enable bi-directional filtering anywhere.
 
 ## 5. Table and column settings
 

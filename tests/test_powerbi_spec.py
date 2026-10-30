@@ -10,7 +10,7 @@ import pandas as pd
 import pytest
 
 from src import anomaly_detection as ad
-from src import database, metrics, powerbi_export, powerbi_spec as spec
+from src import database, metrics, powerbi_export, recommendations, powerbi_spec as spec
 from src.filters import SalesFilter
 
 
@@ -23,7 +23,9 @@ def tables(db_path, clean_df, tmp_path_factory):
         powerbi_export.export_all(connection, out_dir=out)
     finally:
         connection.close()
-    ad.export_weekly(ad.detect(clean_df), out / "anomaly_weekly.csv")
+    detections = ad.detect(clean_df)
+    ad.export_weekly(detections, out / "anomaly_weekly.csv")
+    recommendations.export_findings(recommendations.generate_findings(clean_df, detections), out / "findings.csv")
     return {name: pd.read_csv(out / f"{name}.csv") for name in spec.MODEL}
 
 
@@ -249,6 +251,13 @@ def test_documents_state_that_data_is_synthetic_and_the_dashboard_is_not_yet_val
         assert "synthetic" in text.lower(), name
         assert "Status: specification" in text, name
     assert "Build status" in spec.render_dashboard_spec()
+
+
+def test_the_findings_table_is_in_the_model_and_on_the_executive_page(tables):
+    assert "findings" in spec.MODEL and "findings" in spec.DISCONNECTED
+    assert list(tables["findings"].columns) == recommendations.FINDING_COLUMNS
+    visuals = {v[0]: v for v in spec.PAGES[0]["visuals"]}
+    assert "Top findings" in visuals and "findings[title]" in visuals["Top findings"][2]
 
 
 def test_validation_numbers_in_the_guide_come_from_the_pipeline(clean_df, detections):

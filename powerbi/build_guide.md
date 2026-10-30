@@ -80,7 +80,15 @@ The full list is `data/exports/kpi_monthly.csv`.
 | [Extreme Flags] | 5 | [ ] |
 | [Max Abs Deviation] | 30.1 | [ ] |
 
-### 8.4 Behaviour checks
+### 8.4 Findings table (Executive Overview)
+
+| Check | Expected | Pass? |
+|---|---|---|
+| Rows in `findings` (Data view) | 21 | [ ] |
+| Rank 1 title | Revenue grew 16.5% year on year | [ ] |
+| Rank 1 priority_score | 14.25 | [ ] |
+
+### 8.5 Behaviour checks
 
 - [ ] Selecting Region = South changes every card on pages 1-4 and does not break any visual.
 - [ ] Clearing all slicers returns the 'No slicers' row above.
@@ -88,6 +96,7 @@ The full list is `data/exports/kpi_monthly.csv`.
 - [ ] Category matrix shows no Total for Distinct Orders.
 - [ ] Anomaly line chart is blank until one scope_value and one metric are selected, then shows the band and red flag markers.
 - [ ] Every page carries the synthetic-data footer.
+- [ ] The findings table does not change when slicers change (it is a finished table for the latest 12 months).
 
 ## 9. Troubleshooting
 

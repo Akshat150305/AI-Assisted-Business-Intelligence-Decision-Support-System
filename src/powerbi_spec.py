@@ -23,7 +23,7 @@ import re
 import pandas as pd
 
 from app_config import config
-from src import metrics
+from src import metrics, recommendations
 from src.filters import SalesFilter
 
 POWERBI_DIR = config.PROJECT_ROOT / "powerbi"
@@ -60,6 +60,16 @@ MODEL = {
                     "threshold": "decimal", "status": "text", "is_anomaly": "true/false",
                     "direction": "text", "severity": "text", "suggested_check": "text"},
     },
+    "findings": {
+        "role": "Ranked findings from the Phase 6 rule-based engine (one row per finding; evidence joined with ' | '). "
+                "A finished table: computed for the latest 12 months, so it does not react to the slicers.",
+        "columns": {"rank": "whole", "finding_id": "text", "rule": "text", "finding_type": "text", "title": "text",
+                    "metric": "text", "scope": "text", "period": "text", "baseline_period": "text",
+                    "observed_value": "decimal", "baseline_value": "decimal", "absolute_change": "decimal",
+                    "pct_change": "decimal", "unit": "text", "priority_score": "decimal", "profit_impact": "decimal",
+                    "confidence": "text", "evidence": "text", "observed_fact": "text", "possible_explanation": "text",
+                    "recommended_action": "text", "evidence_needed": "text", "limitations": "text"},
+    },
     "kpi_summary": {
         "role": "ANSWER KEY (SQL-computed headline KPIs, one row). Used only to check the DAX. Not on a deliverable page.",
         "columns": {"revenue": "decimal", "cost": "decimal", "profit": "decimal", "profit_margin_pct": "decimal",
@@ -92,7 +102,7 @@ RELATIONSHIPS = [
     ("dim_date[date]", "anomaly_weekly[week_start]", "Lets the date slicer filter the weeks shown on the anomaly page."),
 ]
 SORT_BY = [("dim_date[month_name]", "dim_date[month_number]"), ("dim_date[day_name]", "dim_date[day_of_week_number]")]
-DISCONNECTED = ["kpi_summary", "kpi_monthly", "customer_metrics"]
+DISCONNECTED = ["findings", "kpi_summary", "kpi_monthly", "customer_metrics"]
 EXPORT_TABLES = list(MODEL)
 
 # ============================================================================= DAX MEASURES
@@ -231,8 +241,13 @@ PAGES = [
              "Negative months in a second colour. First month is blank by design."),
             ("Anomaly alert", "card", ["[Flagged Weeks]", "[Extreme Flags]"],
              "Clicking drills to the Anomaly Monitor page (button). Label: 'statistical anomalies to investigate'."),
+            ("Top findings", "table", ["findings[rank]", "findings[title]", "findings[confidence]", "findings[priority_score]",
+                                       "findings[recommended_action]"],
+             "Visual-level Top N filter: Top 5 by findings[rank], sorted ascending. Not affected by the slicers (the engine "
+             "analyses the latest 12 months). Title the visual 'Key findings (latest 12 months, synthetic data)'. "
+             "Add a tooltip page or drill-through with findings[observed_fact], [possible_explanation], [evidence_needed], [limitations]."),
         ],
-        "notes": ["All five cards respond to every slicer.", "Footer text box on every page: " + SYNTHETIC_FOOTER],
+        "notes": ["The five cards respond to every slicer; the findings table does not.", "Footer text box on every page: " + SYNTHETIC_FOOTER],
     },
     {
         "name": "Product & Category Performance", "stakeholder": "Product/category manager",
@@ -362,8 +377,8 @@ def render_data_model():
               _table(["From (one side)", "To (many side)", "Cardinality / filter direction", "Purpose"],
                      [(f"`{a}`", f"`{b}`", "One to many, single direction (one side filters many side)", why)
                       for a, b, why in RELATIONSHIPS]), "",
-              "Leave `kpi_summary`, `kpi_monthly` and `customer_metrics` **without relationships** (answer key only): "
-              + ", ".join(f"`{t}`" for t in DISCONNECTED) + ". Do not enable bi-directional filtering anywhere.", "",
+              "Leave these tables **without relationships**: " + ", ".join(f"`{t}`" for t in DISCONNECTED)
+              + " (`findings` is a finished text table; the other three are the answer key). Do not enable bi-directional filtering anywhere.", "",
               "## 5. Table and column settings", "",
               "- Mark `dim_date` as a date table using `dim_date[date]`.",
               *[f"- Sort `{a}` by `{b}`." for a, b in SORT_BY],
@@ -512,13 +527,22 @@ def render_build_guide(clean_df=None, detections=None):
                   _table(["Measure", "Expected", "Pass?"],
                          [("[Flagged Weeks]", f"{anomaly['flags']:,}", "[ ]"), ("[Scored Weeks]", f"{anomaly['scored']:,}", "[ ]"),
                           ("[Extreme Flags]", f"{anomaly['extreme']:,}", "[ ]"), ("[Max Abs Deviation]", f"{anomaly['max_dev']:.1f}", "[ ]")]), ""]
-    lines += ["### 8.4 Behaviour checks", "",
+    if clean_df is not None:
+        findings = recommendations.generate_findings(clean_df, detections)
+        top = findings.iloc[0] if len(findings) else None
+        lines += ["### 8.4 Findings table (Executive Overview)", "",
+                  _table(["Check", "Expected", "Pass?"],
+                         [("Rows in `findings` (Data view)", f"{len(findings):,}", "[ ]"),
+                          ("Rank 1 title", top["title"] if top is not None else "n/a", "[ ]"),
+                          ("Rank 1 priority_score", f"{top['priority_score']:.2f}" if top is not None else "n/a", "[ ]")]), ""]
+    lines += ["### 8.5 Behaviour checks", "",
               "- [ ] Selecting Region = South changes every card on pages 1-4 and does not break any visual.",
               "- [ ] Clearing all slicers returns the 'No slicers' row above.",
               "- [ ] A date range that contains no data shows blanks/zeros, not errors.",
               "- [ ] Category matrix shows no Total for Distinct Orders.",
               "- [ ] Anomaly line chart is blank until one scope_value and one metric are selected, then shows the band and red flag markers.",
-              "- [ ] Every page carries the synthetic-data footer.", "",
+              "- [ ] Every page carries the synthetic-data footer.",
+              "- [ ] The findings table does not change when slicers change (it is a finished table for the latest 12 months).", "",
               "## 9. Troubleshooting", "",
               _table(["Symptom", "Likely cause", "Fix"],
                      [("Revenue is right but orders are too high", "Used COUNTROWS instead of DISTINCTCOUNT", "Use the [Distinct Orders] measure"),
