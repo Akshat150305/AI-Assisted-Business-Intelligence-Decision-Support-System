@@ -1,0 +1,170 @@
+section,scope,metric,period,value,unit,source
+headline,All,revenue,2024-01-01 to 2025-12-31,6826108.29,currency,metrics.compute_kpis
+current_window,All,revenue,2025-01-01 to 2025-12-31,3672869.57,currency,metrics.compute_kpis
+prior_window,All,revenue,2024-01-01 to 2024-12-31,3153238.72,currency,metrics.compute_kpis
+year_on_year_pct,All,revenue,2025-01-01 to 2025-12-31,16.4793,percent,metrics.compare_periods
+headline,All,profit,2024-01-01 to 2025-12-31,2503523.38,currency,metrics.compute_kpis
+current_window,All,profit,2025-01-01 to 2025-12-31,1342751.25,currency,metrics.compute_kpis
+prior_window,All,profit,2024-01-01 to 2024-12-31,1160772.13,currency,metrics.compute_kpis
+year_on_year_pct,All,profit,2025-01-01 to 2025-12-31,15.6774,percent,metrics.compare_periods
+headline,All,profit_margin_pct,2024-01-01 to 2025-12-31,36.6757,percent,metrics.compute_kpis
+current_window,All,profit_margin_pct,2025-01-01 to 2025-12-31,36.5586,percent,metrics.compute_kpis
+prior_window,All,profit_margin_pct,2024-01-01 to 2024-12-31,36.8121,percent,metrics.compute_kpis
+year_on_year_pct,All,profit_margin_pct,2025-01-01 to 2025-12-31,-0.6884,percent,metrics.compare_periods
+headline,All,distinct_orders,2024-01-01 to 2025-12-31,22829.0,count,metrics.compute_kpis
+current_window,All,distinct_orders,2025-01-01 to 2025-12-31,12106.0,count,metrics.compute_kpis
+prior_window,All,distinct_orders,2024-01-01 to 2024-12-31,10723.0,count,metrics.compute_kpis
+year_on_year_pct,All,distinct_orders,2025-01-01 to 2025-12-31,12.8975,percent,metrics.compare_periods
+headline,All,avg_order_value,2024-01-01 to 2025-12-31,299.0104,currency,metrics.compute_kpis
+current_window,All,avg_order_value,2025-01-01 to 2025-12-31,303.3925,currency,metrics.compute_kpis
+prior_window,All,avg_order_value,2024-01-01 to 2024-12-31,294.0631,currency,metrics.compute_kpis
+year_on_year_pct,All,avg_order_value,2025-01-01 to 2025-12-31,3.1726,percent,metrics.compare_periods
+headline,All,active_customers,2024-01-01 to 2025-12-31,1185.0,count,metrics.compute_kpis
+current_window,All,active_customers,2025-01-01 to 2025-12-31,1145.0,count,metrics.compute_kpis
+prior_window,All,active_customers,2024-01-01 to 2024-12-31,1138.0,count,metrics.compute_kpis
+year_on_year_pct,All,active_customers,2025-01-01 to 2025-12-31,0.6151,percent,metrics.compare_periods
+headline,All,units_sold,2024-01-01 to 2025-12-31,140358.0,count,metrics.compute_kpis
+current_window,All,units_sold,2025-01-01 to 2025-12-31,74912.0,count,metrics.compute_kpis
+prior_window,All,units_sold,2024-01-01 to 2024-12-31,65446.0,count,metrics.compute_kpis
+year_on_year_pct,All,units_sold,2025-01-01 to 2025-12-31,14.4638,percent,metrics.compare_periods
+category,Home & Kitchen,revenue,2025-01-01 to 2025-12-31,1111917.1,currency,metrics.breakdown
+category,Home & Kitchen,profit,2025-01-01 to 2025-12-31,419758.05,currency,metrics.breakdown
+category,Home & Kitchen,profit_margin_pct,2025-01-01 to 2025-12-31,37.7508,percent,metrics.breakdown
+category,Home & Kitchen,revenue_share_pct,2025-01-01 to 2025-12-31,30.2738,percent,metrics.breakdown
+category,Home & Kitchen,avg_order_value,2025-01-01 to 2025-12-31,193.5452,currency,metrics.breakdown
+category,Electronics,revenue,2025-01-01 to 2025-12-31,980686.65,currency,metrics.breakdown
+category,Electronics,profit,2025-01-01 to 2025-12-31,222001.87,currency,metrics.breakdown
+category,Electronics,profit_margin_pct,2025-01-01 to 2025-12-31,22.6374,percent,metrics.breakdown
+category,Electronics,revenue_share_pct,2025-01-01 to 2025-12-31,26.7008,percent,metrics.breakdown
+category,Electronics,avg_order_value,2025-01-01 to 2025-12-31,188.5211,currency,metrics.breakdown
+category,Clothing,revenue,2025-01-01 to 2025-12-31,731344.67,currency,metrics.breakdown
+category,Clothing,profit,2025-01-01 to 2025-12-31,350443.24,currency,metrics.breakdown
+category,Clothing,profit_margin_pct,2025-01-01 to 2025-12-31,47.9177,percent,metrics.breakdown
+category,Clothing,revenue_share_pct,2025-01-01 to 2025-12-31,19.9121,percent,metrics.breakdown
+category,Clothing,avg_order_value,2025-01-01 to 2025-12-31,147.4783,currency,metrics.breakdown
+category,Sports & Outdoors,revenue,2025-01-01 to 2025-12-31,577514.64,currency,metrics.breakdown
+category,Sports & Outdoors,profit,2025-01-01 to 2025-12-31,209942.94,currency,metrics.breakdown
+category,Sports & Outdoors,profit_margin_pct,2025-01-01 to 2025-12-31,36.3528,percent,metrics.breakdown
+category,Sports & Outdoors,revenue_share_pct,2025-01-01 to 2025-12-31,15.7238,percent,metrics.breakdown
+category,Sports & Outdoors,avg_order_value,2025-01-01 to 2025-12-31,161.5878,currency,metrics.breakdown
+category,Beauty & Personal Care,revenue,2025-01-01 to 2025-12-31,271406.51,currency,metrics.breakdown
+category,Beauty & Personal Care,profit,2025-01-01 to 2025-12-31,140605.15,currency,metrics.breakdown
+category,Beauty & Personal Care,profit_margin_pct,2025-01-01 to 2025-12-31,51.8061,percent,metrics.breakdown
+category,Beauty & Personal Care,revenue_share_pct,2025-01-01 to 2025-12-31,7.3895,percent,metrics.breakdown
+category,Beauty & Personal Care,avg_order_value,2025-01-01 to 2025-12-31,98.837,currency,metrics.breakdown
+region,West,revenue,2025-01-01 to 2025-12-31,1426860.49,currency,metrics.breakdown
+region,West,profit,2025-01-01 to 2025-12-31,532807.13,currency,metrics.breakdown
+region,West,profit_margin_pct,2025-01-01 to 2025-12-31,37.3412,percent,metrics.breakdown
+region,West,revenue_share_pct,2025-01-01 to 2025-12-31,38.8487,percent,metrics.breakdown
+region,West,avg_order_value,2025-01-01 to 2025-12-31,335.1011,currency,metrics.breakdown
+region,South,revenue,2025-01-01 to 2025-12-31,926094.46,currency,metrics.breakdown
+region,South,profit,2025-01-01 to 2025-12-31,340730.47,currency,metrics.breakdown
+region,South,profit_margin_pct,2025-01-01 to 2025-12-31,36.7922,percent,metrics.breakdown
+region,South,revenue_share_pct,2025-01-01 to 2025-12-31,25.2145,percent,metrics.breakdown
+region,South,avg_order_value,2025-01-01 to 2025-12-31,290.2208,currency,metrics.breakdown
+region,North,revenue,2025-01-01 to 2025-12-31,925783.11,currency,metrics.breakdown
+region,North,profit,2025-01-01 to 2025-12-31,336674.6,currency,metrics.breakdown
+region,North,profit_margin_pct,2025-01-01 to 2025-12-31,36.3665,percent,metrics.breakdown
+region,North,revenue_share_pct,2025-01-01 to 2025-12-31,25.206,percent,metrics.breakdown
+region,North,avg_order_value,2025-01-01 to 2025-12-31,310.0412,currency,metrics.breakdown
+region,East,revenue,2025-01-01 to 2025-12-31,394131.51,currency,metrics.breakdown
+region,East,profit,2025-01-01 to 2025-12-31,132539.05,currency,metrics.breakdown
+region,East,profit_margin_pct,2025-01-01 to 2025-12-31,33.6281,percent,metrics.breakdown
+region,East,revenue_share_pct,2025-01-01 to 2025-12-31,10.7309,percent,metrics.breakdown
+region,East,avg_order_value,2025-01-01 to 2025-12-31,235.8657,currency,metrics.breakdown
+segment,Corporate,revenue,2025-01-01 to 2025-12-31,1886825.5,currency,metrics.breakdown
+segment,Corporate,profit,2025-01-01 to 2025-12-31,690688.56,currency,metrics.breakdown
+segment,Corporate,profit_margin_pct,2025-01-01 to 2025-12-31,36.6059,percent,metrics.breakdown
+segment,Corporate,revenue_share_pct,2025-01-01 to 2025-12-31,51.372,percent,metrics.breakdown
+segment,Corporate,avg_order_value,2025-01-01 to 2025-12-31,697.0172,currency,metrics.breakdown
+segment,Small Business,revenue,2025-01-01 to 2025-12-31,948180.17,currency,metrics.breakdown
+segment,Small Business,profit,2025-01-01 to 2025-12-31,345912.79,currency,metrics.breakdown
+segment,Small Business,profit_margin_pct,2025-01-01 to 2025-12-31,36.4818,percent,metrics.breakdown
+segment,Small Business,revenue_share_pct,2025-01-01 to 2025-12-31,25.8158,percent,metrics.breakdown
+segment,Small Business,avg_order_value,2025-01-01 to 2025-12-31,283.2079,currency,metrics.breakdown
+segment,Consumer,revenue,2025-01-01 to 2025-12-31,837863.9,currency,metrics.breakdown
+segment,Consumer,profit,2025-01-01 to 2025-12-31,306149.9,currency,metrics.breakdown
+segment,Consumer,profit_margin_pct,2025-01-01 to 2025-12-31,36.5393,percent,metrics.breakdown
+segment,Consumer,revenue_share_pct,2025-01-01 to 2025-12-31,22.8122,percent,metrics.breakdown
+segment,Consumer,avg_order_value,2025-01-01 to 2025-12-31,138.467,currency,metrics.breakdown
+monthly,All,revenue,2024-01,219439.78,currency,metrics.monthly_trend
+monthly,All,profit,2024-01,79929.73,currency,metrics.monthly_trend
+monthly,All,revenue,2024-02,206970.57,currency,metrics.monthly_trend
+monthly,All,profit,2024-02,76949.76,currency,metrics.monthly_trend
+monthly,All,revenue,2024-03,255167.55,currency,metrics.monthly_trend
+monthly,All,profit,2024-03,94764.36,currency,metrics.monthly_trend
+monthly,All,revenue,2024-04,246312.0,currency,metrics.monthly_trend
+monthly,All,profit,2024-04,90049.37,currency,metrics.monthly_trend
+monthly,All,revenue,2024-05,249675.17,currency,metrics.monthly_trend
+monthly,All,profit,2024-05,91232.49,currency,metrics.monthly_trend
+monthly,All,revenue,2024-06,238140.99,currency,metrics.monthly_trend
+monthly,All,profit,2024-06,86816.38,currency,metrics.monthly_trend
+monthly,All,revenue,2024-07,228880.24,currency,metrics.monthly_trend
+monthly,All,profit,2024-07,84090.18,currency,metrics.monthly_trend
+monthly,All,revenue,2024-08,256517.15,currency,metrics.monthly_trend
+monthly,All,profit,2024-08,94119.32,currency,metrics.monthly_trend
+monthly,All,revenue,2024-09,256322.54,currency,metrics.monthly_trend
+monthly,All,profit,2024-09,96303.9,currency,metrics.monthly_trend
+monthly,All,revenue,2024-10,303483.92,currency,metrics.monthly_trend
+monthly,All,profit,2024-10,113451.14,currency,metrics.monthly_trend
+monthly,All,revenue,2024-11,329521.54,currency,metrics.monthly_trend
+monthly,All,profit,2024-11,117088.31,currency,metrics.monthly_trend
+monthly,All,revenue,2024-12,362807.27,currency,metrics.monthly_trend
+monthly,All,profit,2024-12,135977.19,currency,metrics.monthly_trend
+monthly,All,revenue,2025-01,278318.76,currency,metrics.monthly_trend
+monthly,All,profit,2025-01,102862.97,currency,metrics.monthly_trend
+monthly,All,revenue,2025-02,231379.4,currency,metrics.monthly_trend
+monthly,All,profit,2025-02,85586.52,currency,metrics.monthly_trend
+monthly,All,revenue,2025-03,300864.68,currency,metrics.monthly_trend
+monthly,All,profit,2025-03,113459.72,currency,metrics.monthly_trend
+monthly,All,revenue,2025-04,286667.34,currency,metrics.monthly_trend
+monthly,All,profit,2025-04,105586.76,currency,metrics.monthly_trend
+monthly,All,revenue,2025-05,284532.78,currency,metrics.monthly_trend
+monthly,All,profit,2025-05,105485.13,currency,metrics.monthly_trend
+monthly,All,revenue,2025-06,268841.47,currency,metrics.monthly_trend
+monthly,All,profit,2025-06,100315.26,currency,metrics.monthly_trend
+monthly,All,revenue,2025-07,285881.65,currency,metrics.monthly_trend
+monthly,All,profit,2025-07,105539.43,currency,metrics.monthly_trend
+monthly,All,revenue,2025-08,302511.14,currency,metrics.monthly_trend
+monthly,All,profit,2025-08,113553.7,currency,metrics.monthly_trend
+monthly,All,revenue,2025-09,310555.46,currency,metrics.monthly_trend
+monthly,All,profit,2025-09,96179.13,currency,metrics.monthly_trend
+monthly,All,revenue,2025-10,321654.72,currency,metrics.monthly_trend
+monthly,All,profit,2025-10,120199.13,currency,metrics.monthly_trend
+monthly,All,revenue,2025-11,405064.97,currency,metrics.monthly_trend
+monthly,All,profit,2025-11,145711.17,currency,metrics.monthly_trend
+monthly,All,revenue,2025-12,396597.2,currency,metrics.monthly_trend
+monthly,All,profit,2025-12,148272.33,currency,metrics.monthly_trend
+anomaly,All,flags,2024-01-01 to 2025-12-31,73.0,count,anomaly_detection.detect
+anomaly,All,scored_series_weeks,2024-01-01 to 2025-12-31,3744.0,count,anomaly_detection.detect
+anomaly,All,flag_rate_pct,2024-01-01 to 2025-12-31,1.9498,percent,anomaly_detection.detect
+anomaly,moderate,flags,2024-01-01 to 2025-12-31,53.0,count,anomaly_detection.detect
+anomaly,high,flags,2024-01-01 to 2025-12-31,15.0,count,anomaly_detection.detect
+anomaly,extreme,flags,2024-01-01 to 2025-12-31,5.0,count,anomaly_detection.detect
+anomaly_evaluation,planted events,events,2024-01-01 to 2025-12-31,4.0,count,anomaly_evaluation.evaluate
+anomaly_evaluation,planted events,events_detected,2024-01-01 to 2025-12-31,4.0,count,anomaly_evaluation.evaluate
+data_quality,All,raw_rows,all data,50473.0,count,data_pipeline.clean_sales
+data_quality,All,clean_rows,all data,50391.0,count,data_pipeline.clean_sales
+data_quality,All,rejected_rows,all data,82.0,count,data_pipeline.clean_sales
+data_quality,All,repairs,all data,100.0,count,data_pipeline.clean_sales
+data_quality,All,rejected_revenue_share_pct,all data,0.6657,percent,data_pipeline.clean_sales
+finding,F-YOY-revenue,priority_score,2025-01-01 to 2025-12-31,14.25,percent of window profit,recommendations.generate_findings
+finding,F-YOY-revenue,profit_impact,2025-01-01 to 2025-12-31,191286.82,currency,recommendations.generate_findings
+finding,F-YOY-profit,priority_score,2025-01-01 to 2025-12-31,13.55,percent of window profit,recommendations.generate_findings
+finding,F-YOY-profit,profit_impact,2025-01-01 to 2025-12-31,181979.12,currency,recommendations.generate_findings
+finding,F-CATMARGIN-Electronics,priority_score,2025-01-01 to 2025-12-31,10.17,percent of window profit,recommendations.generate_findings
+finding,F-CATMARGIN-Electronics,profit_impact,2025-01-01 to 2025-12-31,136523.85,currency,recommendations.generate_findings
+finding,F-QOQ-profit-2025-Q4,priority_score,2025-10-01 to 2025-12-31,7.37,percent of window profit,recommendations.generate_findings
+finding,F-QOQ-profit-2025-Q4,profit_impact,2025-10-01 to 2025-12-31,98910.37,currency,recommendations.generate_findings
+finding,F-CATMARGIN-Clothing,priority_score,2025-01-01 to 2025-12-31,6.19,percent of window profit,recommendations.generate_findings
+finding,F-CATMARGIN-Clothing,profit_impact,2025-01-01 to 2025-12-31,83073.56,currency,recommendations.generate_findings
+finding,F-QOQ-revenue-2025-Q4,priority_score,2025-10-01 to 2025-12-31,5.86,percent of window profit,recommendations.generate_findings
+finding,F-QOQ-revenue-2025-Q4,profit_impact,2025-10-01 to 2025-12-31,78688.85,currency,recommendations.generate_findings
+finding,F-REGGROWTH-West,priority_score,2025-01-01 to 2025-12-31,3.69,percent of window profit,recommendations.generate_findings
+finding,F-REGGROWTH-West,profit_impact,2025-01-01 to 2025-12-31,49575.57,currency,recommendations.generate_findings
+finding,F-CATMARGIN-Beauty-Personal-Care,priority_score,2025-01-01 to 2025-12-31,3.08,percent of window profit,recommendations.generate_findings
+finding,F-CATMARGIN-Beauty-Personal-Care,profit_impact,2025-01-01 to 2025-12-31,41382.61,currency,recommendations.generate_findings
+finding,F-REGGROWTH-East,priority_score,2025-01-01 to 2025-12-31,3.04,percent of window profit,recommendations.generate_findings
+finding,F-REGGROWTH-East,profit_impact,2025-01-01 to 2025-12-31,40769.77,currency,recommendations.generate_findings
+finding,F-ANOMALY-Corporate-revenue,priority_score,2025-11-10 to 2025-11-16,1.31,percent of window profit,recommendations.generate_findings
+finding,F-ANOMALY-Corporate-revenue,profit_impact,2025-11-10 to 2025-11-16,17548.63,currency,recommendations.generate_findings

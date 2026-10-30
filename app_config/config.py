@@ -105,3 +105,13 @@ FINDING_MEDIUM_CONFIDENCE_ORDERS = 300  # ... for "Medium" (below this: "Low")
 FINDING_ANOMALY_LOOKBACK_WEEKS = 13     # anomaly flags older than this many weeks are not turned into findings
 FINDINGS_EXPORT = DATA_EXPORTS / "findings.csv"
 FINDINGS_REPORT = REPORTS_DIR / "findings_summary.md"
+
+# ----------------------------------------------------------------------------- Phase 7: reporting
+# Set DASHBOARD_BUILT = True ONLY after the Power BI dashboard has been built and the checklist in
+# powerbi/build_guide.md section 8 has been ticked with real screenshots. Until then every report and slide
+# calls the dashboard a "design specification", never a completed deliverable.
+DASHBOARD_BUILT = False
+BUSINESS_REPORT = REPORTS_DIR / "business_findings_report.md"
+ANALYTICAL_SUMMARY = REPORTS_DIR / "analytical_summary.csv"
+PRESENTATION_DIR = PROJECT_ROOT / "presentation"
+SLIDE_CONTENT = PRESENTATION_DIR / "slide_content.md"
